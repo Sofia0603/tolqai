@@ -51,6 +51,8 @@
     font-display: swap;
 }
 
+
+@import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
