@@ -53,10 +53,13 @@
     font-display: swap;
 }
 
+@theme {
+    --font-sf: "SF Pro", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-onest: "Onest", system-ui, sans-serif;
+    --font-gotham: "Gotham Pro", sans-serif;
 
+    --color-primary: #0f0f0f;
 
+    --gradient-primary: linear-gradient(90deg, #cbc3fc, #8c3cdd);
 
-
-:root {
-    --primary: #0f0f0f;
 }
