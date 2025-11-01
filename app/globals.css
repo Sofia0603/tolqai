@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @font-face {
     font-family: "SF Pro";
     src: url("/fonts/SFPro-Regular.woff2") format("woff2");
@@ -52,10 +54,7 @@
 }
 
 
-@import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 
 :root {
