@@ -1,10 +1,9 @@
-import Hero from "@/components/sections/Hero"
-
+import Banner from "@/components/sections/Banner.js";
 
 export default function Page() {
   return (
     <>
-      <Hero />
+      <Banner />
     </>
   )
 }
