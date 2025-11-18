@@ -4,7 +4,7 @@ import { Play } from "lucide-react";
 
 export default function Banner() {
   return (
-    <section id="banner" className="px-3 flex mb-3 text-center min-h-[80vh]">
+    <section id="banner" className="px-3 flex mb-3 text-center min-h-[80vh] z-10">
       <div className="container mx-auto bg-gray-100 rounded-3xl p-3">
         <div className="bg-white rounded-xl flex justify-end mb-6">
           <Image
