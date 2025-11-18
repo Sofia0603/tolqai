@@ -1,8 +1,8 @@
 "use client"
 import { useState } from "react";
 import { metadata } from "./metadata";
-import Header from "@/components/Header"
-import Footer from "@/components/Footer"
+import Header from "@/src/app/components/Layout/Header/Header"
+import Footer from "@/src/app/components/Layout/Footer/Footer"
 import "./globals.css"
 
 
@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
 
-        <Footer />
+        {/*<Footer />*/}
       </div>
 
     </body>

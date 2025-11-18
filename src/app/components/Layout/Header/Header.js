@@ -1,6 +1,6 @@
 "use client";
-import MobileMenu from "@/components/menu/MobileMenu";
-import MenuList from "@/components/menu/MenuList";
+import MobileMenu from "@/src/app/components/Menu/MobileMenu";
+import MenuList from "@/src/app/components/Menu/MenuList";
 import Image from "next/image";
 
 export default function Header(props) {
@@ -8,15 +8,16 @@ export default function Header(props) {
   const { isOpen, setIsOpen } = props
 
   return (
-    <header className="relative px-5 py-3 md:px-3 py-5">
+    <header className="relative px-5 py-4 mb-3 md:px-3 md:py-5 md:mb-0">
       <div className="container mx-auto">
         <div className="flex items-center justify-between xl:justify-normal ">
           <div>
             <Image
-              src="/images/logo.svg"
+              src="/images/logo/logo.svg"
               alt="Логотип"
               width={81}
               height={25}
+              className="relative w-[81px] h-[25px] md:w-[67px] md:h-[20px] object-contain xl:w-[81px] xl:h-[25px]"
             />
           </div>
           <div className="hidden md:flex xl:ml-auto">
@@ -26,9 +27,9 @@ export default function Header(props) {
               </ul>
             </nav>
           </div>
-          <div className='flex items-center gap-x-6 xl:ml-[178px]'>
+          <div className='flex items-center gap-x-6 xl:ml-[183px]'>
 
-            <button className="button-gradient xl:text-lg">
+            <button className="button-gradient tracking-wide xl:text-lg">
               Get started
             </button>
 
@@ -36,14 +37,14 @@ export default function Header(props) {
             <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
               {isOpen ?
                 <Image
-                  src="/images/close.svg"
+                  src="/images/icons/icon-close.svg"
                   alt=""
                   width={14}
                   height={14}
                 />
                :
                 <Image
-                  src="/images/burger.svg"
+                  src="/images/icons/icon-burger.svg"
                   alt=""
                   width={24}
                   height={24}
