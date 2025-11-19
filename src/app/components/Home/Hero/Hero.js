@@ -10,7 +10,7 @@ export default function Hero() {
 
 
   return (
-    <section id="hero" className="px-3 flex mb-3 text-center  z-10">
+    <section id="hero" className="px-3 flex mb-3 text-center z-10">
       <div className=" container mx-auto bg-gray-100 rounded-3xl p-4 md:p-0">
         <div
           className="relative rounded-xl h-[378px] md:h-[544px] flex justify-end mb-6 overflow-hidden md:mb-0 md:rounded-4xl xl:h-[842px]"

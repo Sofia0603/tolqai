@@ -1,64 +1,63 @@
 @import "tailwindcss";
 
-@font-face {
-    font-family: "SF Pro";
-    src: url("/fonts/SFPro-Regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: "SF Pro";
-    src: url("/fonts/SFPro-Medium.woff2") format("woff2");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: "SF Pro";
-    src: url("/fonts/SFPro-Bold.woff2") format("woff2");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: "SF Pro";
-    src: url("/fonts/SFPro-Semibold.woff2") format("woff2");
-    font-weight: 600;
-    font-display: swap;
-    font-style: normal;
-}
+/*@font-face {*/
+/*    font-family: "SF Pro";*/
+/*    src: url("/fonts/SFPro-Regular.woff2") format("woff2");*/
+/*    font-weight: 400;*/
+/*    font-style: normal;*/
+/*}*/
+/*@font-face {*/
+/*    font-family: "SF Pro";*/
+/*    src: url("/fonts/SFPro-Medium.woff2") format("woff2");*/
+/*    font-weight: 500;*/
+/*    font-style: normal;*/
+/*    font-display: swap;*/
+/*}*/
+/*@font-face {*/
+/*    font-family: "SF Pro";*/
+/*    src: url("/fonts/SFPro-Bold.woff2") format("woff2");*/
+/*    font-weight: 700;*/
+/*    font-style: normal;*/
+/*    font-display: swap;*/
+/*}*/
+/*@font-face {*/
+/*    font-family: "SF Pro";*/
+/*    src: url("/fonts/SFPro-Semibold.woff2") format("woff2");*/
+/*    font-weight: 600;*/
+/*    font-display: swap;*/
+/*    font-style: normal;*/
+/*}*/
 
-/* Onest */
-@font-face {
-    font-family: "Onest";
-    src: url("/fonts/Onest-Regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Onest";
-    src: url("/fonts/Onest-Medium.woff2") format("woff2");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
+/*!* Onest *!*/
+/*@font-face {*/
+/*    font-family: "Onest";*/
+/*    src: url("/fonts/Onest-Regular.woff2") format("woff2");*/
+/*    font-weight: 400;*/
+/*    font-style: normal;*/
+/*    font-display: swap;*/
+/*}*/
+/*@font-face {*/
+/*    font-family: "Onest";*/
+/*    src: url("/fonts/Onest-Medium.woff2") format("woff2");*/
+/*    font-weight: 500;*/
+/*    font-style: normal;*/
+/*    font-display: swap;*/
+/*}*/
 
-/* Gotham Pro */
-@font-face {
-    font-family: "Gotham Pro";
-    src: url("/fonts/GothamPro-Regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
+/*!* Gotham Pro *!*/
+/*@font-face {*/
+/*    font-family: "Gotham Pro";*/
+/*    src: url("/fonts/GothamPro-Regular.woff2") format("woff2");*/
+/*    font-weight: 400;*/
+/*    font-style: normal;*/
+/*    font-display: swap;*/
+/*}*/
 
 
 @theme {
-    --font-sf: "SF Pro", -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-onest: "Onest", system-ui, sans-serif;
-    --font-gotham: "Gotham Pro", sans-serif;
+    /*--font-sf: "SF Pro", sans-serif;*/
+    /*--font-onest: "Onest", sans-serif;*/
+    /*--font-gotham: "Gotham Pro", sans-serif;*/
 
     --color-primary: #0f0f0f;
 
@@ -67,7 +66,13 @@
     --text-gray-400: #575757;
     --bg-black: #0f0f0f;
     --text-color-black: #0f0f0f;
+    --bg-gray: #f8f8f8;
+    --bg-gray-dop: #1f1f1f
 
+}
+
+.font-onest {
+    font-family: var(--font-onest);
 }
 
 
@@ -88,6 +93,13 @@
 
 @utility bg-color-black {
     background-color: var(--bg-black);
+}
+
+@utility bg-color-gray {
+    background-color: var(--bg-gray);
+}
+@utility bg-color-gray-dop {
+    background-color: var(--bg-gray-dop);
 }
 
 
@@ -121,19 +133,110 @@ button:hover {
     @apply cursor-pointer;
 }
 
+
 .button-gradient {
-    @apply font-onest text-transparent bg-clip-text
-    bg-gradient-to-r from-[#cbc3fc] to-[#8c3cdd]
-    bg-[length:200%_200%] animate-gradient-x
-    transition-all ease-in-out duration-500;
+    background: linear-gradient(90deg, #cbc3fc, #8c3cdd);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: gradient-x 3s ease infinite;
+
+    transition:  background 0.6s ease-in-out,
+    background-position 0.6s ease-in-out,
+    color 0.6s ease-in-out;
 }
 
 .button-gradient-hover {
-    @apply text-black transition-colors duration-500 ease-in-out;
+    color: black;
+    transition: background-color 3s ease;
+}
+.button-gradient-hover:hover {
+    background:
+            linear-gradient(90deg, #8c3cdd, #cbc3fc, #8c3cdd)
+            100% 50% / 200% 200% no-repeat;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-x 3s ease infinite;
 }
 
-.button-gradient-hover:hover {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#8c3cdd] via-[#cbc3fc] to-[#8c3cdd]
-    bg-[length:200%_200%] animate-gradient-x;
+.button-background-gradient {
+    background:
+            linear-gradient(90deg, #8c3cdd, #cbc3fc, #8c3cdd)
+            100% 100% / 200% 200% no-repeat;
+    animation: gradient-x 6s ease infinite;
 }
+
+
+.button-border-gradient {
+    position: relative;
+    border-radius: 100px;
+    /*background: linear-gradient(90deg, #fff, #fff);*/
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
+    z-index: 0;
+    overflow: hidden;
+    border: 1px solid;
+    cursor: pointer;
+    transition: color 0.6s ease;
+    background-size: 200% 200%;
+}
+
+/*.button-border-gradient::before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    inset: 0;*/
+/*    border-radius: inherit;*/
+/*    padding: 1px;*/
+/*    background: linear-gradient(45deg, #fff, #fff);*/
+/*    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);*/
+/*    -webkit-mask-composite: xor;*/
+/*    mask-composite: exclude;*/
+/*    pointer-events: none;*/
+/*    z-index: -1;*/
+/*    transition: opacity 0.6s ease;*/
+/*    opacity: 1;*/
+/*}*/
+
+/*.button-border-gradient::after {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    inset: 0;*/
+/*    border-radius: inherit;*/
+/*    padding: 1px;*/
+/*    background: linear-gradient(45deg, #8c3cdd, #cbc3fc, #8c3cdd);*/
+/*    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);*/
+/*    -webkit-mask-composite: xor;*/
+/*    mask-composite: exclude;*/
+/*    pointer-events: none;*/
+/*    z-index: -1;*/
+/*    opacity: 0;*/
+/*    transition: opacity 0.3s ease;*/
+/*}*/
+
+/*.button-border-gradient:hover::after {*/
+/*    opacity: 1;*/
+/*}*/
+
+/*.button-border-gradient:hover::before {*/
+/*    opacity: 0;*/
+/*}*/
+
+/*.button-border-gradient:hover {*/
+/*    background: linear-gradient(90deg, #8c3cdd, #cbc3fc, #8c3cdd);*/
+/*    background-size: 200% 200%;*/
+/*    animation: gradient-x 3s ease infinite;*/
+/*    -webkit-background-clip: text;*/
+/*    -webkit-text-fill-color: transparent;*/
+/*}*/
+
+@keyframes gradient-x {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+
 
