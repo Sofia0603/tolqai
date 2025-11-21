@@ -139,13 +139,14 @@ button:hover {
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
 
     animation: gradient-x 3s ease infinite;
-
-    transition:  background 0.6s ease-in-out,
+    transition: background 0.6s ease-in-out,
     background-position 0.6s ease-in-out,
     color 0.6s ease-in-out;
 }
+
 
 .button-gradient-hover {
     color: black;
