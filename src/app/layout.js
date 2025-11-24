@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
           <div className="absolute inset-0 bg-black/50 z-40 pointer-events-none"></div>
         )}
 
-        <main className="relative z-0 pb-20">
+        <main className="relative z-0 pb-40 overflow-x-hidden">
           {children}
         </main>
 

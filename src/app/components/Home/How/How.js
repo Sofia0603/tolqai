@@ -17,13 +17,13 @@ export default function How(){
             <h4 className="font-onest text-xl text-color-primary mb-2 xl:text-[32px]">Capture Everywhere</h4>
             <p className="font-onest text-xs text-color-second  xl:max-w-[340px] xl:text-xl">Via TolqAI Microphone or uploaded audio (MP3, CRM recordings, call center logs). Works offline and online with automatic sync.</p>
             <Image
-              src="/images/how/card-1.svg"
-              alt=""
-              width={400}
-              height={381}
-              className="w-full h-auto max-w-[456px] self-center xl:mt-auto"
-              layout="responsive"
-            />
+            src="/images/how/card-1.svg"
+            alt=""
+            width={400}
+            height={381}
+            className="w-full h-auto max-w-[456px] self-center xl:mt-auto"
+            layout="responsive"
+          />
           </div>
 
           <div className="flex flex-col relative rounded-2xl bg-color-gray pt-6 pl-6 pr-6 overflow-hidden max-h-[431px] md:max-h-[503px]  xl:max-h-[737px]">
