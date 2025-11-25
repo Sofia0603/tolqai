@@ -14,7 +14,7 @@ export default function Hero() {
           className="relative rounded-xl h-[378px] md:h-[544px] flex justify-end mb-6 overflow-hidden md:mb-0 md:rounded-4xl xl:h-[842px]"
         >
           <Image
-            src="/images/main-banner.png"
+            src="/images/hero/main-banner.png"
             alt=""
             fill
             className="rounded-2xl object-cover object-[40%_75%] md:object-center"
