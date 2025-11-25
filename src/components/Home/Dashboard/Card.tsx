@@ -24,7 +24,7 @@ export default function Card({ title, text, img }) {
             width={400}
             height={381}
             className="w-full h-auto"
-            layout="responsive"
+
           />
       </div>
     </div>

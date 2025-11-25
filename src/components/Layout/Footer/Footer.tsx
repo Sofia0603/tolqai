@@ -73,8 +73,8 @@ export default function Footer() {
 
         <div  className="flex flex-col items-center w-full border-t border-[#d9d9d9] py-5 ">
             <div className="flex gap-5 mb-4">
-              <a href="#" className="font-onetst text-sm text-color-dop">Privacy Policy</a>
-              <a href="#" className="font-onetst text-sm text-color-dop">Terms of Service</a>
+              <a href="#" className="font-onest text-sm text-color-dop">Privacy Policy</a>
+              <a href="#" className="font-onest text-sm text-color-dop">Terms of Service</a>
             </div>
             <div className="font-onetst text-sm text-color-dop">
               © {new Date().getFullYear()} tolqAI. All rights reserved.
