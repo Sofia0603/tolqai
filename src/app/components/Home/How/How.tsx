@@ -1,5 +1,41 @@
 import Image from "next/image";
+import Card from "@/app/components/Home/How/Card";
 
+interface IHow {
+  title: string;
+  description: string;
+  className:string
+  img:string;
+  widthImg:number
+  heightImg:number
+}
+
+const howData: IHow[] = [
+  {
+    title: "Capture Everywhere",
+    description: "Via TolqAI Microphone or uploaded audio (MP3, CRM recordings, call center logs). Works offline and online with automatic sync.",
+    className: "w-full h-auto max-w-[456px] self-center xl:mt-auto",
+    img: "/images/how/card-1.svg",
+    widthImg: 400,
+    heightImg: 381
+  },
+  {
+    title: "Analyze with AI",
+    description: "Automatic transcription, language detection, sentiment analysis, intent recognition,  and service stage classification powered by AI.",
+    className: "w-full h-auto mt-5 max-w-[271px] md:max-w-[415px] md:mt-17 self-center xl:max-w-[348px]",
+    img: "/images/how/card-2.svg",
+    widthImg: 200,
+    heightImg: 400
+  },
+  {
+    title: "Visualize & Act",
+    description: "Dashboard aggregates metrics by employee, branch, or time period. Real-time alerts  and actionable insights",
+    className: "w-full h-auto mt-5 max-w-[274px] md:max-w-[418px] md:mt-18 self-center xl:max-w-[397px]",
+    img: "/images/how/card-3.svg",
+    widthImg: 200,
+    heightImg: 381
+  }
+]
 
 export default function How(){
   return (
@@ -13,44 +49,18 @@ export default function How(){
 
         <div className="flex flex-col gap-4 mt-6 xl:flex-row xl:grid grid-cols-3">
 
-          <div className="flex flex-col relative rounded-2xl bg-color-gray pt-6 pl-6 pr-6 overflow-hidden max-h-[426px] md:max-h-[503px]  xl:max-h-[737px]">
-            <h4 className="font-onest text-xl text-color-primary mb-2 xl:text-[32px]">Capture Everywhere</h4>
-            <p className="font-onest text-xs text-color-second  xl:max-w-[340px] xl:text-xl">Via TolqAI Microphone or uploaded audio (MP3, CRM recordings, call center logs). Works offline and online with automatic sync.</p>
-            <Image
-            src="/images/how/card-1.svg"
-            alt=""
-            width={400}
-            height={381}
-            className="w-full h-auto max-w-[456px] self-center xl:mt-auto"
-            layout="responsive"
-          />
-          </div>
+          {howData.map((item, index) => (
+              <Card
+                  title={item.title}
+                  description={item.description}
+                  className={item.className}
+                  img={item.img}
+                  widthImg={item.widthImg}
+                  heightImg={item.heightImg}
+                  key={index}
+              />
+          ))}
 
-          <div className="flex flex-col relative rounded-2xl bg-color-gray pt-6 pl-6 pr-6 overflow-hidden max-h-[431px] md:max-h-[503px]  xl:max-h-[737px]">
-            <h4 className="font-onest text-xl text-color-primary mb-2 md:mb-3 xl:text-[32px]">Analyze with AI</h4>
-            <p className="font-onest text-xs text-color-second max-w-120 xl:text-xl xl:max-w-[340px]">Automatic transcription, language detection, sentiment analysis, intent recognition,  and service stage classification powered by AI.</p>
-            <Image
-              src="/images/how/card-2.svg"
-              alt=""
-              width={200}
-              height={400}
-              className="w-full h-auto mt-5 max-w-[271px] md:max-w-[415px] md:mt-17 self-center xl:max-w-[348px]"
-              layout="responsive"
-            />
-          </div>
-
-          <div className="flex flex-col relative rounded-2xl bg-color-gray pt-6 pl-6 pr-6 overflow-hidden max-h-[426px] md:max-h-[503px] xl:max-h-[737px]">
-            <h4 className="font-onest text-xl text-color-primary mb-2 xl:text-[32px] ">Visualize & Act</h4>
-            <p className="font-onest text-xs text-color-second max-w-120 xl:text-xl xl:max-w-[340px]">Dashboard aggregates metrics by employee, branch, or time period. Real-time alerts  and actionable insights.</p>
-            <Image
-              src="/images/how/card-3.svg"
-              alt=""
-              width={200}
-              height={381}
-              className="w-full h-auto mt-5 max-w-[274px] md:max-w-[418px] md:mt-18 self-center xl:max-w-[397px] "
-              layout="responsive"
-            />
-          </div>
 
         </div>
       </div>
