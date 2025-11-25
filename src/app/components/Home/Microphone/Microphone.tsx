@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Card from "@/src/app/components/Home/Microphone/Card";
+import Card from "@/app/components/Home/Microphone/Card";
 
 export default function Microphone(){
   return (

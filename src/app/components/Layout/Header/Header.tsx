@@ -1,16 +1,20 @@
 "use client";
-import MobileMenu from "@/src/app/components/Menu/MobileMenu";
-import MenuList from "@/src/app/components/Menu/MenuList";
+
 import Image from "next/image";
+import MobileMenu from "@/app/components/Menu/MobileMenu";
+import MenuList from "@/app/components/Menu/MenuList";
 
-export default function Header(props) {
+export interface HeaderProps {
+  isOpen: boolean;
+  setIsOpen: (value: boolean) => void;
+}
 
-  const { isOpen, setIsOpen } = props
-
+export default function Header({ isOpen, setIsOpen }: HeaderProps) {
   return (
     <header className="relative z-50 px-5 py-4 mb-3 md:px-3 md:py-5 md:mb-0">
       <div className="container mx-auto">
         <div className="flex items-center justify-between xl:justify-normal ">
+          {/* Logo */}
           <div>
             <Image
               src="/images/logo/logo.svg"
@@ -20,6 +24,8 @@ export default function Header(props) {
               className="relative w-[81px] h-[25px] md:w-[67px] md:h-[20px] object-contain xl:w-[81px] xl:h-[25px]"
             />
           </div>
+
+          {/* Desktop menu */}
           <div className="hidden md:flex xl:ml-auto">
             <nav>
               <ul className="flex justify-between gap-4 py-1 font-onest text-sm xl:gap-[50px] xl:text-lg">
@@ -27,36 +33,39 @@ export default function Header(props) {
               </ul>
             </nav>
           </div>
+
+          {/* Buttons */}
           <div className='flex items-center gap-x-6 xl:ml-[183px]'>
 
             <button className="button-gradient tracking-wide xl:text-lg">
               Get started
             </button>
 
-
+            {/* Burger menu (mobile) */}
             <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ?
+              {isOpen ? (
                 <Image
                   src="/images/icons/icon-close.svg"
-                  alt=""
+                  alt="Меню закрыть"
                   width={14}
                   height={14}
                 />
-               :
+              ) : (
                 <Image
                   src="/images/icons/icon-burger.svg"
-                  alt=""
+                  alt="Открыть меню"
                   width={24}
                   height={24}
                 />
-              }
+              )}
             </button>
+
           </div>
         </div>
 
-       <MobileMenu isOpen={isOpen}/>
-
+        {/* Mobile menu */}
+        <MobileMenu isOpen={isOpen} />
       </div>
     </header>
-  )
+  );
 }

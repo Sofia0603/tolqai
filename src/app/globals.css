@@ -70,11 +70,13 @@
     --bg-gray-dop: #1f1f1f
 
 }
+:root {
+    --font-onest: 'Onest', sans-serif;
+}
 
 .font-onest {
     font-family: var(--font-onest);
 }
-
 
 @utility text-color-primary {
     color: var(--text-gray-500);

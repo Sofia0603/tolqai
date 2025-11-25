@@ -1,19 +1,21 @@
 "use client";
-import {useRef, useState} from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
 
+import { useRef, useState } from "react";
+import dynamic from "next/dynamic";
+import SliderButtons from "@/app/components/Common/SliderButtons";
+import Card from "@/app/components/Home/Dashboard/Card";
 
-import SliderButtons from "@/src/app/components/Common/SliderButtons";
-import Card from "@/src/app/components/Home/Dashboard/Card";
+const Swiper = dynamic(() => import("swiper/react").then(mod => mod.Swiper), { ssr: false });
+import { SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+
 
 export default function Dashboard() {
 
-  const swiperRef = useRef(null);
-
-  const [isBeginning, setIsBeginning] = useState(true);
-  const [isEnd, setIsEnd] = useState(false);
+    const swiperRef = useRef<any>(null);
+    const [isBeginning, setIsBeginning] = useState(true);
+    const [isEnd, setIsEnd] = useState(false);
 
   return (
     <section id="dashboard" className="bg-color-black border-none shadow-lg md:shadow-none">
