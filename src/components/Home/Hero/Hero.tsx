@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Play } from "lucide-react";
-import BannerContent from "@/app/components/Home/Hero/HeroContent";
+import BannerContent from "@/components/Home/Hero/HeroContent";
 
 
 export default function Hero() {

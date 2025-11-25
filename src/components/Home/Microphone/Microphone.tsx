@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Card from "@/app/components/Home/Microphone/Card";
+import Card from "@/components/Home/Microphone/Card";
 
 interface IMicrophone {
   title:string

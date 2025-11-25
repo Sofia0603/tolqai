@@ -2,8 +2,8 @@
 
 import { useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import SliderButtons from "@/app/components/Common/SliderButtons";
-import Card from "@/app/components/Home/Dashboard/Card";
+import SliderButtons from "@/components/Common/SliderButtons";
+import Card from "@/components/Home/Dashboard/Card";
 
 const Swiper = dynamic(() => import("swiper/react").then(mod => mod.Swiper), { ssr: false });
 import { SwiperSlide } from "swiper/react";

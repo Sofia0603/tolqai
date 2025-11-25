@@ -1,6 +1,6 @@
 "use client";
 
-import MenuList from "@/app/components/Menu/MenuList";
+import MenuList from "@/components/Menu/MenuList";
 
 export default function MobileMenu({ isOpen }) {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Header from "@/app/components/Layout/Header/Header";
+import Header from "@/components/Layout/Header/Header";
 
 export default function HeaderWrapper() {
     const [isOpen, setIsOpen] = useState(false);

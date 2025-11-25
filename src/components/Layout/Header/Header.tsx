@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import MobileMenu from "@/app/components/Menu/MobileMenu";
-import MenuList from "@/app/components/Menu/MenuList";
+import MobileMenu from "@/components/Menu/MobileMenu";
+import MenuList from "@/components/Menu/MenuList";
 
 export interface HeaderProps {
   isOpen: boolean;
