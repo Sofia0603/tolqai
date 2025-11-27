@@ -4,7 +4,7 @@ import Use from "@/components/Home/Use/Use";
 import Dashboard from "@/components/Home/Dashboard/Dashboard";
 import Microphone from "@/components/Home/Microphone/Microphone";
 import useCasesData from "@/data/useCasesData";
-// import { howData } from "@/data/howData";
+import nowData from "@/data/nowData";
 import type { GetServerSideProps } from "next";
 
 
@@ -13,17 +13,27 @@ interface IUseCase {
     title: string;
     description: string;
 }
+interface IHow {
+    title: string;
+    description: string;
+    className:string
+    img:string;
+    widthImg:number
+    heightImg:number
+}
+
 
 interface PageProps {
     useCasesData: IUseCase[];
+    nowData: IHow[];
 }
 
-export default function Page({ useCasesData }: PageProps) {
+export default function Page({ useCasesData, nowData }: PageProps) {
 
     return (
         <>
             <Hero />
-            <How />
+            <How data={ nowData } />
             <Use data={ useCasesData } />
             <Dashboard />
             <Microphone />
@@ -35,7 +45,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     return {
         props: {
             useCasesData,
-            // howData
+            nowData
         },
     };
 };
