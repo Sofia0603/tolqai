@@ -2,7 +2,11 @@
 
 import MenuList from "@/components/Menu/MenuList";
 
-export default function MobileMenu({ isOpen }) {
+interface IMobileMenuProps {
+  isOpen: boolean;
+}
+
+export default function MobileMenu({ isOpen }:IMobileMenuProps) {
   return (
     <nav
       className={`fixed top-[65px] left-0 w-full text-center px-6 py-3 bg-white rounded-b-[40px] shadow z-50 md:hidden

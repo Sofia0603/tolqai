@@ -1,6 +1,12 @@
 import Image from "next/image";
 
-export default function Card({ title, text, img }) {
+interface ICardProps {
+    title: string;
+    text: string;
+    img: string;
+}
+
+export default function Card({ title, text, img }:ICardProps) {
   return (
     <div className="flex flex-col bg-white rounded-2xl p-3 h-full max-w-[336px] md:p-5 md:max-w-[666px]  xl:max-w-[1224px] ">
       <h4 className="flex items-center text-[15px] md:text-xl xl:text-2xl xl:mb-3">

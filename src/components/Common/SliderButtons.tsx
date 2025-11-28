@@ -1,7 +1,12 @@
+interface ISliderButtonsProps {
+    onPrev: () => void;
+    onNext: () => void;
+    isBeginning: boolean;
+    isEnd: boolean;
+}
 
-export default function SliderButtons({ onPrev, onNext, isBeginning, isEnd }) {
 
-
+export default function SliderButtons({ onPrev, onNext, isBeginning, isEnd }:ISliderButtonsProps) {
 
   return (
     <div className="flex space-x-2 justify-center mt-5" >

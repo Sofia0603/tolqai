@@ -15,7 +15,7 @@ export default function Hero() {
         >
           <Image
             src="/images/hero/main-banner.png"
-            alt=""
+            alt="Service Quality Monitoring"
             fill
             sizes="100vw"
             loading="eager"
