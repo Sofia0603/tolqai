@@ -18,6 +18,9 @@ export default function Card({icon, title, description, img, classNameImg} : ICa
           width={18}
           height={18}
           className=" h-auto self-center xl:w-[24px] xl:h-[21px]"
+          onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src = "/images/icons/icon-line.svg";
+          }}
 
         />
         <h4 className="font-onest text-xl text-color-primary md:text-[32px]">{title}</h4>
@@ -28,6 +31,9 @@ export default function Card({icon, title, description, img, classNameImg} : ICa
         alt={title}
         fill
         className={classNameImg}
+        onError={(e) => {
+            (e.currentTarget as HTMLImageElement).src = "/images/microphone/card-1.svg";
+        }}
       />
     </div>
   )

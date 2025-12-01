@@ -27,10 +27,16 @@ export default function Card({ title, text, img }:ICardProps) {
           <Image
             src={img}
             alt={title}
-            width={400}
-            height={381}
+            width={1224}
+            height={977}
+            sizes="(max-width: 768px) 100vw,
+                     (max-width: 1280px) 666px,
+                     1224px"
             className="w-full h-auto"
-
+            onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = "/images/dashboard/card-1.png";
+            }}
+            priority
           />
       </div>
     </div>

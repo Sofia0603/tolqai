@@ -10,6 +10,9 @@ export default function Footer() {
             alt="Логотип"
             width={74}
             height={25}
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src = "/images/footer-logo.svg";
+            }}
           />
         </div>
         <div className="flex flex-col gap-8 mb-10">

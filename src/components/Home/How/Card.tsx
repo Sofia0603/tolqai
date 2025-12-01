@@ -20,6 +20,9 @@ export default function Card({ title, description, className, img, widthImg, hei
                 width={widthImg}
                 height={heightImg}
                 className={className}
+                onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = "/images/how/card-1.svg";
+                }}
             />
         </div>
     );

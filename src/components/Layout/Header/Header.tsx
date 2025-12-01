@@ -22,6 +22,9 @@ export default function Header({ isOpen, setIsOpen }: HeaderProps) {
               width={81}
               height={25}
               className="relative w-[81px] h-[25px] md:w-[67px] md:h-[20px] object-contain xl:w-[81px] xl:h-[25px]"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src = "/images/logo/logo.svg";
+              }}
             />
           </div>
 
@@ -49,6 +52,9 @@ export default function Header({ isOpen, setIsOpen }: HeaderProps) {
                   alt="Меню закрыть"
                   width={14}
                   height={14}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = "/images/icons/icon-close.svg";
+                  }}
                 />
               ) : (
                 <Image
@@ -56,6 +62,9 @@ export default function Header({ isOpen, setIsOpen }: HeaderProps) {
                   alt="Открыть меню"
                   width={24}
                   height={24}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = "/images/icons/icon-burger.svg";
+                  }}
                 />
               )}
             </button>

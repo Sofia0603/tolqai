@@ -15,6 +15,10 @@ export default function Card({ icon, title, description}: ICardProps){
                 height={32}
                 alt={title}
                 className="mb-10 md:mb-12 xl:mb-24"
+                onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = "/images/icons/icon-sale.svg";
+                }}
+
             />
             <h4 className="text-xl text-white mb-2 xl:text-2xl">{title}</h4>
             <p className="text-xs text-white opacity-70 leading-4 tracking-wide md:text-sm xl:text-lg xl:leading-6">

@@ -4,16 +4,17 @@ import { useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import SliderButtons from "@/components/Common/SliderButtons";
 import Card from "@/components/Home/Dashboard/Card";
+import type { Swiper as SwiperType } from "swiper";
 
-const Swiper = dynamic(() => import("swiper/react").then(mod => mod.Swiper), { ssr: false });
 import { SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
+const Swiper = dynamic(() => import("swiper/react").then(mod => mod.Swiper), { ssr: false });
 
 
 export default function Dashboard() {
 
-    const swiperRef = useRef<any>(null);
+    const swiperRef = useRef<SwiperType | null>(null);
     const [isBeginning, setIsBeginning] = useState(true);
     const [isEnd, setIsEnd] = useState(false);
 
@@ -43,8 +44,9 @@ export default function Dashboard() {
                   setIsEnd(swiper.isEnd);
                 }}
                 onSlideChange={() => {
-                  setIsBeginning(swiperRef.current.isBeginning);
-                  setIsEnd(swiperRef.current.isEnd);
+                    if (!swiperRef.current) return;
+                    setIsBeginning(swiperRef.current.isBeginning);
+                    setIsEnd(swiperRef.current.isEnd);
                 }}
                 className="pb-10 flex items-start justify-center h-[420px] md:h-[620px] xl:h-[1030px]"
               >

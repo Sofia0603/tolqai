@@ -21,6 +21,9 @@ export default function Hero() {
             loading="eager"
             priority
             className="rounded-2xl object-cover object-[40%_75%] md:object-center"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src = "/images/hero/main-banner.png";
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl pointer-events-none"></div>
 
