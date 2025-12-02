@@ -28,15 +28,15 @@ const microphoneData:IMicrophone[] = [
     title: "Secure & Encrypted",
     description: "Enterprise-grade security with end-to-end encryption and GDPR compliance",
     icon: "/images/icons/icon-message.svg",
-    img:"/images/microphone/card-3.svg",
-    classNameImg:"object-cover mt-auto md:max-h-[500] md:absolute",
+    img:"/images/microphone/card-1.svg",
+    classNameImg:"object-cover mt-auto md:max-h-[500]",
   },
   {
     title: "Instant Dashboard Sync",
     description: "Pairs instantly with your TolqAI dashboard — data appears in real-time as conversations happen",
     icon: "/images/icons/icon-lightning.svg",
     img:"/images/microphone/card-1.svg",
-    classNameImg:"object-cover mt-auto ml-auto",
+    classNameImg:"object-cover mt-auto ml-auto ",
   },
 
 ]

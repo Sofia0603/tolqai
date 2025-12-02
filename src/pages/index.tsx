@@ -3,10 +3,12 @@ import How from "@/components/Home/How/How";
 import Use from "@/components/Home/Use/Use";
 import Dashboard from "@/components/Home/Dashboard/Dashboard";
 import Microphone from "@/components/Home/Microphone/Microphone";
+import Features from "@/components/Home/Features/Features";
+
 import useCasesData from "@/data/useCasesData";
 import nowData from "@/data/nowData";
 import type { GetServerSideProps } from "next";
-
+import GetStarted from "@/components/Home/GetStarted/GetStarted";
 
 interface IUseCase {
     icon: string;
@@ -37,6 +39,8 @@ export default function Page({ useCasesData, nowData }: PageProps) {
             <Use data={ useCasesData } />
             <Dashboard />
             <Microphone />
+            <Features />
+            <GetStarted />
         </>
     )
 }
