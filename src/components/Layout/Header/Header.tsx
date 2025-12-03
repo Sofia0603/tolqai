@@ -11,7 +11,7 @@ export interface HeaderProps {
 
 export default function Header({ isOpen, setIsOpen }: HeaderProps) {
   return (
-    <header className="relative z-50 px-5 py-4 mb-3 md:px-3 md:py-5 md:mb-0">
+    <header className="relative z-50 px-5 py-4 mb-3 bg-white md:px-3 md:py-5 md:mb-0 ">
       <div className="container mx-auto">
         <div className="flex items-center justify-between xl:justify-normal ">
           {/* Logo */}

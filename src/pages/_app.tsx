@@ -2,6 +2,7 @@ import type { AppProps } from "next/app";
 import "@/globals.css";
 import { Onest } from "next/font/google";
 import HeaderWrapper from "@/components/Layout/Header/HeaderWrapper";
+import Footer from "@/components/Layout/Footer/Footer";
 
 const onest = Onest({
     variable: "--font-onest",
@@ -14,9 +15,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     return (
         <div className={`${onest.variable} font-onest flex flex-col min-h-screen`}>
             <HeaderWrapper />
-            <main className="relative z-0 pb-40 overflow-x-hidden">
+
+            <main className="relative z-0 overflow-x-hidden">
                 <Component {...pageProps} />
             </main>
+            <Footer/>
         </div>
     );
 }

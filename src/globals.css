@@ -67,7 +67,8 @@
     --bg-black: #0f0f0f;
     --text-color-black: #0f0f0f;
     --bg-gray: #f8f8f8;
-    --bg-gray-dop: #1f1f1f
+    --bg-gray-dop: #1f1f1f;
+    --red-color:#FF6B6B;
 
 }
 :root {
@@ -103,6 +104,13 @@
 @utility bg-color-gray-dop {
     background-color: var(--bg-gray-dop);
 }
+@utility bg-color-red{
+    background-color: var(--red-color);
+}
+
+@utility text-color-red{
+    color: var(--red-color);
+}
 
 
 
@@ -128,6 +136,18 @@
 
 @utility animate-gradient-x {
     animation: gradient-x 5s linear infinite;
+}
+
+input,
+textarea {
+    outline: none !important;
+}
+
+
+input:-internal-autofill-selected,
+input:autofill {
+    background-color: inherit !important;
+    color: inherit !important;
 }
 
 
@@ -174,71 +194,59 @@ button:hover {
 
 .button-border-gradient {
     position: relative;
-    border-radius: 100px;
-    /*background: linear-gradient(90deg, #fff, #fff);*/
-    /*-webkit-background-clip: text;*/
-    /*-webkit-text-fill-color: transparent;*/
-    z-index: 0;
-    overflow: hidden;
-    border: 1px solid;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 34px;
+    font-size: 20px;
+    color: white;
+    border-radius: 9999px;
+    background: transparent;
     cursor: pointer;
-    transition: color 0.6s ease;
-    background-size: 200% 200%;
+    z-index: 0;
+    border: none;
 }
 
-/*.button-border-gradient::before {*/
-/*    content: "";*/
-/*    position: absolute;*/
-/*    inset: 0;*/
-/*    border-radius: inherit;*/
-/*    padding: 1px;*/
-/*    background: linear-gradient(45deg, #fff, #fff);*/
-/*    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);*/
-/*    -webkit-mask-composite: xor;*/
-/*    mask-composite: exclude;*/
-/*    pointer-events: none;*/
-/*    z-index: -1;*/
-/*    transition: opacity 0.6s ease;*/
-/*    opacity: 1;*/
-/*}*/
+.button-border-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px; /* толщина рамки */
+    background: linear-gradient(45deg, #8c3cdd, #cbc3fc, #8c3cdd);
+    -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: subtract;
+    pointer-events: none;
+    z-index: -1;
+}
 
-/*.button-border-gradient::after {*/
-/*    content: "";*/
-/*    position: absolute;*/
-/*    inset: 0;*/
-/*    border-radius: inherit;*/
-/*    padding: 1px;*/
-/*    background: linear-gradient(45deg, #8c3cdd, #cbc3fc, #8c3cdd);*/
-/*    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);*/
-/*    -webkit-mask-composite: xor;*/
-/*    mask-composite: exclude;*/
-/*    pointer-events: none;*/
-/*    z-index: -1;*/
-/*    opacity: 0;*/
-/*    transition: opacity 0.3s ease;*/
-/*}*/
+/* ВНУТРЕННИЙ ЧЁРНЫЙ ФОН — бордер становится идеально ровным */
+.button-border-gradient > span {
+    background: #000;
+    border-radius: inherit;
+    padding: 12px 30px;
+    display: inline-block;
+}
 
-/*.button-border-gradient:hover::after {*/
-/*    opacity: 1;*/
-/*}*/
+/* Hover: анимированный градиент текста */
+.button-border-gradient:hover > span {
+    background: linear-gradient(90deg, #8c3cdd, #cbc3fc, #8c3cdd);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-x 3s ease infinite;
+}
 
-/*.button-border-gradient:hover::before {*/
-/*    opacity: 0;*/
-/*}*/
-
-/*.button-border-gradient:hover {*/
-/*    background: linear-gradient(90deg, #8c3cdd, #cbc3fc, #8c3cdd);*/
-/*    background-size: 200% 200%;*/
-/*    animation: gradient-x 3s ease infinite;*/
-/*    -webkit-background-clip: text;*/
-/*    -webkit-text-fill-color: transparent;*/
-/*}*/
 
 @keyframes gradient-x {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+
 
 #dashboard .swiper-slide{
     transition: all 0.3s ease;

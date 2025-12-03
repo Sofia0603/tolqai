@@ -9,8 +9,8 @@ interface IMobileMenuProps {
 export default function MobileMenu({ isOpen }:IMobileMenuProps) {
   return (
     <nav
-      className={`fixed top-[65px] left-0 w-full text-center px-6 py-3 bg-white rounded-b-[40px] shadow z-50 md:hidden
-      transition-all duration-300 ease-in-out overflow-hidden z-20
+      className={`fixed top-[57px] left-0 w-full text-center px-6 py-3 bg-white rounded-b-[40px] shadow z-60 md:hidden
+      transition-all duration-300 ease-in-out overflow-hidden
       ${isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}
     >
       <ul className="flex flex-col gap-4 p-4 font-onest text-sm">
