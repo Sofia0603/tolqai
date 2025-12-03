@@ -12,9 +12,9 @@ export default function HeroContent(){
       </div>
 
       <div className="flex flex-col gap-2 mt-5 md:flex-row-reverse md:gap-3.5 md:justify-end xl:flex-col-reverse xl:items-end xl:mt-0 ">
-        <button className="button-gradient-hover button-border-gradient font-onest font-normal text-color-primary text-sm rounded-full inline-flex justify-center items-center gap-3 w-full p-3 md:bg-transparent md:border-white md:w-55.5 md:text-white xl:p-5 xl:w-max xl:text-lg">
-          <Play className="w-4 h-4 text-color-primary md:text-white hover:text-[#8c3cdd]" />
-          <span>See dashboard in action</span>
+        <button className="button-gradient-hover button-border-gradient font-onest font-normal text-color-primary text-sm rounded-full inline-flex justify-center items-center gap-3 w-full p-3 md:bg-transparent md:border-white md:w-55.5  xl:p-5 xl:w-max xl:text-lg">
+          <Play className="w-4 h-4 text-color-primary md:text-white" />
+          <span className="text-color-primary md:text-white">See dashboard in action</span>
         </button>
 
 

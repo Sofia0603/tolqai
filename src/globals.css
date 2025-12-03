@@ -210,11 +210,15 @@ button:hover {
     cursor: pointer;
     /*overflow: hidden;*/
     transition: border-color 0.3s ease;
-    color: white;
-    padding-top: 24px;
-    padding-bottom: 24px;
-}
 
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+@media screen and (max-width: 768px){
+    .button-border-gradient{
+        border: 1px solid black;
+    }
+}
 
 
 /* ::after для градиента */
@@ -236,24 +240,17 @@ button:hover {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-
 .button-border-gradient:hover {
     border-color: transparent;
 }
 
+
 .button-border-gradient:hover::after {
     opacity: 1;
 }
-/*.button-border-gradient svg path {*/
-/*    stroke: white; !* рамка иконки всегда белая *!*/
-/*    fill: transparent; !* изначально пустая внутри *!*/
-/*    transition: fill 0.3s ease;*/
-/*}*/
-
-/*.button-border-gradient:hover svg path {*/
-/*    fill: url(#iconGradient); !* внутренний градиент при hover *!*/
-/*    color: #8c3cdd;*/
-/*}*/
+.button-border-gradient:hover svg circle {
+    fill: url(#gradient-hover);
+}
 
 
 
