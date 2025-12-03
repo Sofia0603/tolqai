@@ -11,16 +11,15 @@ export default function HeroContent(){
         </p>
       </div>
 
-      <div className="flex flex-col gap-2  mt-5 md:flex-row-reverse md:gap-3.5 md:justify-end xl:flex-col-reverse xl:items-end xl:mt-0 ">
-        {/*<button className="font-onest font-normal text-color-primary text-sm button-border-gradient rounded-full inline-flex justify-center items-center gap-3 w-full p-3 md:bg-transparent md:border-white md:w-55.5 md:text-white xl:p-5 xl:w-max xl:text-lg">*/}
-        {/*  <Play className="w-4 h-4 text-color-primary md:text-white" />*/}
-        {/*  See dashboard in action*/}
-        {/*</button>*/}
-        <button className="font-onest font-normal text-color-primary text-sm button-border-gradient rounded-full inline-flex justify-center items-center gap-3 w-full p-3 md:bg-transparent md:border-white md:w-55.5 md:text-white xl:p-5 xl:w-max xl:text-lg">
-          <Play className="w-4 h-4 text-color-primary md:text-white" />
-          See dashboard in action
+      <div className="flex flex-col gap-2 mt-5 md:flex-row-reverse md:gap-3.5 md:justify-end xl:flex-col-reverse xl:items-end xl:mt-0 ">
+        <button className="button-gradient-hover button-border-gradient font-onest font-normal text-color-primary text-sm rounded-full inline-flex justify-center items-center gap-3 w-full p-3 md:bg-transparent md:border-white md:w-55.5 md:text-white xl:p-5 xl:w-max xl:text-lg">
+          <Play className="w-4 h-4 text-color-primary md:text-white hover:text-[#8c3cdd]" />
+          <span>See dashboard in action</span>
         </button>
-        <button className="font-onest font-normal text-sm button-background-gradient text-white rounded-full inline-flex justify-center items-center gap-3 w-full p-3 md:w-36 xl:p-5 xl:w-46 xl:text-lg">Request a Demo</button>
+
+
+
+          <button className="font-onest font-normal text-sm button-background-gradient text-white rounded-full inline-flex justify-center items-center gap-3 w-full p-3 md:w-36 xl:p-5 xl:w-46 xl:text-lg">Request a Demo</button>
 
       </div>
     </div>

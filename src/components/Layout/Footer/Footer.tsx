@@ -1,4 +1,17 @@
 import Image from "next/image";
+import footerMenu from "@/data/footerMenu";
+
+type FooterMenuProps = {
+  title: string;
+  menu: MenuItem[];
+};
+
+type MenuItem = {
+  name: string;
+  href: string;
+};
+
+const data = footerMenu
 
 export default function Footer() {
   return (
@@ -8,7 +21,7 @@ export default function Footer() {
       <div className="flex flex-col md:max-w-[492px] md:mx-auto xl:max-w-[923px] xl:flex-row xl:gap-30">
         <div  className="flex justify-center mb-10 md:mb-8 md:w-full md:justify-start xl:w-max">
           <Image
-              src="/images/footer-logo.svg"
+              src="/images/logo/logo.svg"
               alt="Логотип"
               width={74}
               height={25}
@@ -20,60 +33,18 @@ export default function Footer() {
         </div>
         <div className="flex flex-col justify-between gap-8 mb-10 md:flex-row md:gap-11 xl:gap-26 ">
 
-          {/*first menu*/}
-          <div className="text-center md:text-left">
-            <div className="font-onest font-medium text-sm mb-3 md:text-lg">Sections</div>
-            <ul className="flex flex-col gap-2">
-              <li>
-                <a href="#" className="font-onest text-sm">How it works</a>
-              </li>
-              <li>
-                <a href="#" className="font-onest text-sm">Use Cases</a>
-              </li>
-              <li>
-                <a href="#" className="font-onest text-sm">Dashboard</a>
-              </li>
-              <li>
-                <a href="#" className="font-onest text-sm">TolqAI Microphone</a>
-              </li>
-              <li>
-                <a href="#" className="font-onest text-sm">Features</a>
-              </li>
-            </ul>
-          </div>
-
-          {/*second menu*/}
-          <div className="text-center md:text-left">
-            <div className="font-onest font-medium text-sm mb-3 md:text-lg">Solutions</div>
-            <ul className="flex flex-col gap-2">
-              <li>
-                <a href="#" className="font-onest text-sm">Retail & Automotive</a>
-              </li>
-              <li>
-                <a href="#" className="font-onest text-sm">Customer Support</a>
-              </li>
-              <li>
-                <a href="#" className="font-onest text-sm">HR & Recruitment</a>
-              </li>
-              <li>
-                <a href="#" className="font-onest text-sm">Training & QA</a>
-              </li>
-            </ul>
-          </div>
-
-          {/*third menu*/}
-          <div className="text-center md:text-left">
-            <div className="font-onest font-medium text-sm mb-3 md:text-lg">Contact</div>
-            <ul className="flex flex-col gap-2">
-              <li>
-                <a href="#" className="font-onest text-sm">demo@tolqai.com</a>
-              </li>
-              <li>
-                <a href="#" className="font-onest text-sm">WhatsApp Support</a>
-              </li>
-
-            </ul>
-          </div>
+          {data.map((section:FooterMenuProps) => (
+              <div key={section.title} className="text-center md:text-left">
+                <div className="font-onest font-medium text-sm mb-3 md:text-lg">{section.title}</div>
+                <ul className="flex flex-col gap-2">
+                  {section.menu.map((item) => (
+                      <li key={item.name}>
+                        <a href={item.href} className="font-onest text-sm">{item.name}</a>
+                      </li>
+                  ))}
+                </ul>
+              </div>
+          ))}
 
         </div>
       </div>

@@ -6,11 +6,11 @@ export default function MenuList() {
     }
 
     const menu: MenuItem[] = [
-        { title: "How it works", href: "/" },
-        { title: "Use Cases", href: "/" },
-        { title: "Dashboard", href: "/" },
-        { title: "TolqAI Microphone", href: "/" },
-        { title: "Features", href: "/" },
+        { title: "How it works", href: "#how" },
+        { title: "Use Cases", href: "#use" },
+        { title: "Dashboard", href: "#dashboard" },
+        { title: "TolqAI Microphone", href: "#microphone" },
+        { title: "Features", href: "#features" },
     ];
 
 

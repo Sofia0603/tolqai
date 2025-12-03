@@ -99,12 +99,12 @@ export default function Form(){
 
             if (!res.ok) {
                 const data = await res.json().catch(() => null);
-                throw new Error(data?.message || "Server error");
+                throw new Error(data?.message || "Ошибка сервера");
             }
 
             setSuccess(true);
         } catch (err: any) {
-            setServerError(err.message || "Error sending form");
+            setServerError(err.message || "Не удалось отправить форму");
         } finally {
             setLoading(false);
         }
@@ -141,14 +141,14 @@ export default function Form(){
                     value={formData.name}
                     onChange={handleChange}
                     className={`w-full p-4 rounded-full bg-color-gray-dop border border-[#575757] text-color-dop h-[50px] transition hover:bg-[#575757] focus:bg-[#575757] ${
-                        errors.name ? "ring-2 ring-red-500" : ""
+                        errors.name ? "ring-1  ring-[#FF6B6B]" : ""
                     }`}
                     type="text"
                     id="name"
                     placeholder="Joe Doe"
                     autoComplete="off"
                 />
-                {errors.name && <p className="text-red-400 text-xs">{errors.name}</p>}
+                {errors.name && <p className="text-[#FF6B6B] text-xs">{errors.name}</p>}
             </div>
             <div className="flex flex-col gap-2">
                 <label className="text-white text-xs" htmlFor="email">Email Address* </label>
@@ -157,14 +157,14 @@ export default function Form(){
                     value={formData.email}
                     onChange={handleChange}
                     className={`w-full p-4 rounded-full bg-color-gray-dop border border-[#575757] text-color-dop h-[50px] transition hover:bg-[#575757] focus:bg-[#575757] ${
-                        errors.email ? "ring-2 ring-red-500" : ""
+                        errors.email ? "ring-1 ring-[#FF6B6B]" : ""
                     }`}
                     type="email"
                     id="email"
                     placeholder="john@company.com"
                     autoComplete="off"
                 />
-                {errors.email && <p className="text-red-400 text-xs">{errors.email}</p>}
+                {errors.email && <p className="text-[#FF6B6B] text-xs">{errors.email}</p>}
             </div>
             <div className="flex flex-col gap-2">
                 <label className="text-white text-xs" htmlFor="company-name">Company Name*  </label>
@@ -173,14 +173,14 @@ export default function Form(){
                     value={formData.company}
                     onChange={handleChange}
                     className={`w-full p-4 rounded-full bg-color-gray-dop border border-[#575757] text-color-dop h-[50px] transition hover:bg-[#575757] focus:bg-[#575757] ${
-                        errors.company ? "ring-2 ring-red-500" : ""
+                        errors.company ? "ring-1 ring-[#FF6B6B]" : ""
                     }`}
                     type="text"
                     id="company"
                     placeholder="Your Company Inc."
                     autoComplete="off"
                 />
-                {errors.company && (<p className="text-red-400 text-xs">{errors.company}</p>)}
+                {errors.company && (<p className="text-[#FF6B6B] text-xs">{errors.company}</p>)}
             </div>
             <div className="flex flex-col gap-2">
                 <label className="text-white text-xs" htmlFor="needs">Tell us about your needs</label>
@@ -197,7 +197,7 @@ export default function Form(){
                     transition hover:bg-[#575757] focus:bg-[#575757]
                     "
                 ></textarea>
-                {serverError && (<p className="text-red-400 text-xs">{serverError}</p>)}
+                {serverError && (<p className="text-[#FF6B6B] text-xs">{serverError}</p>)}
 
             </div>
 

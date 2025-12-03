@@ -15,7 +15,7 @@ interface UseProps {
 export default function Use({ data }: UseProps) {
 
   return (
-    <section className="bg-color-black pt-10 pb-12 md:pt-20 md:pb-21">
+    <section id="use" className="bg-color-black pt-10 pb-12 md:pt-20 md:pb-21">
       <div className="flex flex-col items-center container mx-auto px-3 xl:px-0">
         <h2 className=" text-xl py-2 px-6 rounded-full w-max bg-white text-color-primary mb-4  md:text-2xl md:mb-5 xl:text-[32px] xl:mb-5">Use Cases</h2>
         <h3 className=" text-white text-[32px] text-center mb-3 md:text-[40px] xl:text-[70px]">Built for Every Business Function</h3>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Card from "@/components/Home/Microphone/Card";
 
 interface IMicrophone {

@@ -20,10 +20,10 @@ export default async function handler(
             return res.status(400).json({ message: "Invalid email" });
         }
 
-        // Simulate sending data (CRM, DB, email, etc.)
         await new Promise((resolve) => setTimeout(resolve, 600));
 
-        return res.status(200).json({ ok: true });
+        return res.status(200).json({ ok: true }); // заглушка
+
     } catch (err) {
         console.error("API Error:", err);
         return res.status(500).json({ message: "Internal server error" });

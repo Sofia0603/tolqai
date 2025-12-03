@@ -10,12 +10,12 @@ import nowData from "@/data/nowData";
 import type { GetServerSideProps } from "next";
 import GetStarted from "@/components/Home/GetStarted/GetStarted";
 
-interface IUseCase {
+type TUseCase =  {
     icon: string;
     title: string;
     description: string;
 }
-interface IHow {
+type THow = {
     title: string;
     description: string;
     className:string
@@ -23,14 +23,12 @@ interface IHow {
     widthImg:number
     heightImg:number
 }
-
-
-interface PageProps {
-    useCasesData: IUseCase[];
-    nowData: IHow[];
+type TPageProps = {
+    useCasesData: TUseCase[];
+    nowData: THow[];
 }
 
-export default function Page({ useCasesData, nowData }: PageProps) {
+export default function Page({ useCasesData, nowData }: TPageProps) {
 
     return (
         <>
