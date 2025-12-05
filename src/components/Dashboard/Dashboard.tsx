@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import SliderButtons from "@/components/Common/SliderButtons";
-import Card from "@/components/Home/Dashboard/Card";
+import Card from "@/components/Dashboard/Card";
 import type { Swiper as SwiperType } from "swiper";
 
 import { SwiperSlide } from "swiper/react";

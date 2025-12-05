@@ -1,4 +1,4 @@
-import Card from "@/components/Home/Microphone/Card";
+import Card from "@/components/Microphone/Card";
 
 interface IMicrophone {
   title:string

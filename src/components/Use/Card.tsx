@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {useState} from "react";
 
 interface ICardProps{
     icon: string;
@@ -7,16 +8,25 @@ interface ICardProps{
 }
 
 export default function Card({ icon, title, description}: ICardProps){
+
+    const [imgSrc, setImgSrc] = useState(icon);
+    const [errored, setErrored] = useState(false);
+
+
+
     return (
         <div className="py-5 pl-5 pr-12 bg-color-gray-dop rounded-4xl md:py-7 md:pl-7 xl:p-9">
             <Image
-                src={icon}
+                src={imgSrc}
                 width={32}
                 height={32}
-                alt={title}
+                alt="icon"
                 className="mb-10 md:mb-12 xl:mb-24"
                 onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = "/images/icons/icon-sale.svg";
+                    if(!errored){
+                        setImgSrc('./images/no-icon.svg')
+                        setErrored(true);
+                    }
                 }}
 
             />

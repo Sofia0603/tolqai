@@ -40,9 +40,9 @@ export default function Header({ isOpen, setIsOpen }: HeaderProps) {
           {/* Buttons */}
           <div className='flex items-center gap-x-6 xl:ml-[183px]'>
 
-            <button className="button-gradient tracking-wide xl:text-lg">
+            <a href="#getStarted" className="button-gradient tracking-wide xl:text-lg">
               Get started
-            </button>
+            </a>
 
             {/* Burger menu (mobile) */}
             <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>

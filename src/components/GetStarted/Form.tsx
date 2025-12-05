@@ -20,6 +20,8 @@ export default function Form(){
         needs: "",
     });
 
+    const [img, setImg] = useState("images/icons/icon-done.svg");
+    const [errored, setErrored] = useState(false);
     const [errors, setErrors] = useState<Partial<FormData>>({});
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
@@ -32,7 +34,7 @@ export default function Form(){
         needs: useRef<HTMLTextAreaElement>(null),
     };
 
-    // обновляем state при вводе
+
     function handleChange(
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) {
@@ -75,7 +77,6 @@ export default function Form(){
         }
     }
 
-
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         setServerError("");
@@ -103,12 +104,17 @@ export default function Form(){
             }
 
             setSuccess(true);
-        } catch (err: any) {
-            setServerError(err.message || "Не удалось отправить форму");
+        } catch (err: unknown) {
+            if (err instanceof Error) {
+                setServerError(err.message);
+            } else {
+                setServerError("Не удалось отправить форму");
+            }
         } finally {
             setLoading(false);
         }
     }
+
 
     if (success) {
         return (
@@ -117,11 +123,17 @@ export default function Form(){
                 style={{background: "rgba(78, 206, 56, 0.1)", border: "1px solid #4ece38"}}
             >
                 <Image
-                    src="images/icons/icon-done.svg"
+                    src={img}
                     width={19}
                     height={14}
                     alt="done"
                     className="self-center mb-3"
+                    onError={() => {
+                        if(!errored){
+                            setImg('/images/no-icon.svg')
+                            setErrored(true);
+                        }
+                    }}
                 />
                 <h2 className="text-xl text-white mb-2 xl:text-2xl xl:mb-5">Your application <br />has been submitted</h2>
                 <p className="text-color-dop text-sm xl:text-lg">The manager will contact you soon</p>
@@ -130,10 +142,8 @@ export default function Form(){
     }
 
     return (
-        <form
-            onSubmit={handleSubmit}
-            noValidate
-            className="flex flex-col gap-4 mt-10 mb-15 w-full max-w-[490px] m d:mt-15 md:mb-20">
+        <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4 mt-10 mb-15 w-full max-w-[490px] m d:mt-15 md:mb-20">
+
             <div className="flex flex-col gap-2">
                 <label className="text-white text-xs" htmlFor="name">Full Name*</label>
                 <input

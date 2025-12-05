@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Card from "@/components/Home/Use/Card";
+import Card from "@/components/Use/Card";
 
 interface IUseCase {
   icon: string;

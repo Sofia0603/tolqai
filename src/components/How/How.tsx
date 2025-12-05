@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Card from "@/components/Home/How/Card";
+import Card from "@/components/How/Card";
 
 interface IHow {
   title: string;

@@ -1,9 +1,9 @@
-import Form from "@/components/Home/GetStarted/Form";
+import Form from "@/components/GetStarted/Form";
 import LinkBottom from "@/components/Common/LinkBottom";
 
 export default function GetStarted(){
     return (
-        <section className="bg-color-black md:pt-20 md:pb-21 md:bg-white md:mx-3">
+        <section id="getStarted" className="bg-color-black md:pt-20 md:pb-21 md:bg-white md:mx-3">
             <div className="bg-color-black py-20 flex flex-col items-center container mx-auto px-3 rounded-3xl xl:px-0">
                 <h2 className=" text-xl py-2 px-6 rounded-full w-max bg-color-gray-dop text-white mb-4  md:text-2xl md:mb-5 xl:text-[32px] xl:mb-5">Get started</h2>
                 <h3 className=" text-white text-[32px] text-center mb-3 md:text-[40px] xl:text-[70px]">Ready to <span className="text-color-dop">Transform</span> Your Business?</h3>

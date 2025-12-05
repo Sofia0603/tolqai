@@ -1,11 +1,13 @@
 import Image from "next/image";
 import { Play } from "lucide-react";
-import BannerContent from "@/components/Home/Hero/HeroContent";
+import {useState} from "react";
+import BannerContent from "@/components/Hero/HeroContent";
 
 
 export default function Hero() {
 
-
+  const [imgSrc, setImgSrc] = useState('/images/hero/main-banner.png');
+  const [errored, setErrored] = useState(false);
 
   return (
     <section id="hero" className="px-3 flex mb-3 text-center z-10">
@@ -14,15 +16,18 @@ export default function Hero() {
           className="relative rounded-xl h-[378px] md:h-[544px] flex justify-end mb-6 overflow-hidden md:mb-0 md:rounded-4xl xl:h-[842px]"
         >
           <Image
-            src="/images/hero/main-banner.png"
+            src={imgSrc}
             alt="Service Quality Monitoring"
             fill
             sizes="100vw"
             loading="eager"
             priority
             className="rounded-2xl object-cover object-[40%_75%] md:object-center"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).src = "/images/hero/main-banner.png";
+            onError={() => {
+              if (!errored) {
+                setImgSrc('/images/no-image.png');
+                setErrored(true);
+              }
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl pointer-events-none"></div>

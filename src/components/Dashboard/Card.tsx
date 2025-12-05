@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {useState} from "react";
 
 interface ICardProps {
     title: string;
@@ -7,6 +8,10 @@ interface ICardProps {
 }
 
 export default function Card({ title, text, img }:ICardProps) {
+
+    const [imgSrc, setImgSrc] = useState(img);
+    const [errored, setErrored] = useState(false);
+
   return (
     <div className="flex flex-col bg-white rounded-2xl p-3 h-full max-w-[336px] md:p-5 md:max-w-[666px]  xl:max-w-[1224px] ">
       <h4 className="flex items-center text-[15px] md:text-xl xl:text-2xl xl:mb-3">
@@ -25,7 +30,7 @@ export default function Card({ title, text, img }:ICardProps) {
       </p>
       <div className="mt-auto">
           <Image
-            src={img}
+            src={imgSrc}
             alt={title}
             width={1224}
             height={977}
@@ -33,14 +38,14 @@ export default function Card({ title, text, img }:ICardProps) {
                      (max-width: 1280px) 666px,
                      1224px"
             className="w-full h-auto"
-            onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src = "/images/dashboard/card-1.png";
+            onError={() => {
+                if (!errored) {
+                    setImgSrc('/images/no-image.png');
+                    setErrored(true);
+                }
             }}
-            priority
           />
       </div>
     </div>
   );
 }
-// xl:h-[977px]
-// h-[386px] md:h-[596px]

@@ -3,6 +3,7 @@ import "@/globals.css";
 import { Onest } from "next/font/google";
 import HeaderWrapper from "@/components/Layout/Header/HeaderWrapper";
 import Footer from "@/components/Layout/Footer/Footer";
+import Head from "next/head";
 
 const onest = Onest({
     variable: "--font-onest",
@@ -14,12 +15,27 @@ const onest = Onest({
 export default function MyApp({ Component, pageProps }: AppProps) {
     return (
         <div className={`${onest.variable} font-onest flex flex-col min-h-screen`}>
+            <Head>
+                <title>TolqAi</title>
+                <meta name="description" content="TolqAi: description" />
+
+
+                <link rel="icon" href="" />
+
+
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="TolqAi" />
+                <meta property="og:description" content="TolqAi: description" />
+                <meta property="og:image" content="/og-image.png" />
+            </Head>
+
             <HeaderWrapper />
 
             <main className="relative z-0 overflow-x-hidden">
                 <Component {...pageProps} />
             </main>
-            <Footer/>
+
+            <Footer />
         </div>
     );
 }
