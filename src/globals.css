@@ -31,6 +31,10 @@ html {
     scroll-behavior: smooth;
 }
 
+@utility text-primary {
+    color: var(--color-primary);
+}
+
 @utility text-color-primary {
     color: var(--text-gray-500);
 }
@@ -137,16 +141,12 @@ button:hover {
 }
 
 
-
 .button-background-gradient {
     background:
             linear-gradient(75deg, #8c3cdd, #cbc3fc, #8c3cdd)
             100% 100% / 200% 200% no-repeat;
     animation: gradient-x 6s ease infinite;
 }
-
-
-
 
 
 
@@ -199,8 +199,9 @@ button:hover {
 .button-border-gradient:hover svg circle {
     fill: url(#gradient-hover);
 }
-
-
+.button-border-gradient svg path{
+    stroke: black ;
+}
 
 
 
@@ -208,12 +209,50 @@ button:hover {
     transition: all 0.3s ease;
 }
 
+
+@media screen and (max-width: 768px) {
+    .button-border-gradient svg path{
+        stroke: black !important ;
+    }
+    .button-border-gradient:hover svg path {
+        stroke: black !important;
+    }
+
+
+    .button-border-gradient:hover::after {
+        opacity: 0 !important;
+    }
+
+    .button-border-gradient:hover {
+        border-color: black !important;
+    }
+    .button-gradient-hover:hover{
+        background: black;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        animation: 3s infinite gradient-x;
+    }
+
+}
+
 @media screen and (min-width: 768px) {
     #dashboard .swiper-slide{
-      transform: scaleY(0.9);
+        transform: scaleY(0.9);
     }
     #dashboard .swiper-slide.swiper-slide-active{
         transform: scaleY(1);
+    }
+    .button-border-gradient svg path{
+        stroke: white ;
+    }
+    .button-border-gradient:hover svg path {
+        stroke: url(#gradient);
+    }
+}
+@media screen and (min-width: 1280px) {
+    .button-border-gradient{
+        padding-top: 21px;
+        padding-bottom: 21px;
     }
 }
 

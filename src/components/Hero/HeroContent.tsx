@@ -12,14 +12,44 @@ export default function HeroContent(){
       </div>
 
       <div className="flex flex-col gap-2 mt-5 md:flex-row-reverse md:gap-3.5 md:justify-end xl:flex-col-reverse xl:items-end xl:mt-0 ">
-        <button className="button-gradient-hover button-border-gradient font-onest font-normal text-color-primary text-sm rounded-full inline-flex justify-center items-center gap-3 w-full p-3 md:bg-transparent md:border-white md:w-55.5  xl:p-5 xl:w-max xl:text-lg">
-          <Play className="w-4 h-4 text-color-primary md:text-white" />
-          <span className="text-color-primary md:text-white">See dashboard in action</span>
-        </button>
+          <button
+              className="button-gradient-hover button-border-gradient font-onest font-normal text-color-primary text-sm rounded-full inline-flex justify-center items-center gap-3 w-full p-3 md:bg-transparent md:border-white md:w-55.5 xl:p-5 xl:w-max xl:text-lg"
+          >
+              <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="icon-svg lucide w-4 h-4 transition-all duration-300"
+                  aria-hidden="true"
+              >
+                  <defs>
+                      <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
+                          <stop offset="0%" stopColor="#8c3cdd" />
+                          <stop offset="50%" stopColor="#cbc3fc" />
+                          <stop offset="100%" stopColor="#8c3cdd" />
+                      </linearGradient>
+
+                      <linearGradient id="gradient-hover" x1="0" y1="0" x2="1" y2="1">
+                          <stop offset="0%" stopColor="#8c3cdd" />
+                          <stop offset="50%" stopColor="#cbc3fc" />
+                          <stop offset="100%" stopColor="#8c3cdd" />
+                      </linearGradient>
+                  </defs>
+
+                  <path className="icon-path" stroke="black" strokeWidth="2" strokeLinecap="round" d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path>
+              </svg>
+
+              <span className="text-color-primary md:text-white">See dashboard in action</span>
+          </button>
 
 
 
-          <button className="font-onest font-normal text-sm button-background-gradient text-white rounded-full inline-flex justify-center items-center gap-3 w-full p-3 md:w-36 xl:p-5 xl:w-46 xl:text-lg">Request a Demo</button>
+          <button
+              className="font-onest font-normal text-sm button-background-gradient text-white rounded-full inline-flex justify-center items-center gap-3 w-full p-3 md:w-36 xl:p-5 xl:w-46 xl:text-lg"
+          >Request a Demo
+          </button>
 
       </div>
     </div>

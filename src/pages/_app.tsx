@@ -4,6 +4,7 @@ import { Onest } from "next/font/google";
 import HeaderWrapper from "@/components/Layout/Header/HeaderWrapper";
 import Footer from "@/components/Layout/Footer/Footer";
 import Head from "next/head";
+import Cookie from "@/components/Cookie/Cookie";
 
 const onest = Onest({
     variable: "--font-onest",
@@ -36,6 +37,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             </main>
 
             <Footer />
+
+            {/*<Cookie/>*/}
         </div>
     );
 }
