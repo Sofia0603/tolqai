@@ -13,13 +13,13 @@ export default function Hero() {
     <section id="hero" className="px-3 flex mb-3 text-center z-10">
       <div className=" container mx-auto bg-gray-100 rounded-3xl p-4 md:p-0">
         <div
-          className="relative rounded-xl h-[378px] md:h-[544px] flex justify-end mb-6 overflow-hidden md:mb-0 md:rounded-4xl xl:h-[842px]"
+          className="relative rounded-xl h-[40vh] flex justify-end mb-6 overflow-hidden md:mb-0 md:rounded-4xl md:h-[90vh]"
         >
           <Image
             src={imgSrc}
             alt="Service Quality Monitoring"
             fill
-            sizes="100vw"
+            sizes="100vh"
             loading="eager"
             priority
             className="rounded-2xl object-cover object-[40%_75%] md:object-center"
