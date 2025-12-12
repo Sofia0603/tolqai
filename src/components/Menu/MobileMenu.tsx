@@ -20,8 +20,8 @@ export default function MobileMenu({ isOpen }:IMobileMenuProps) {
         <a href="#" className="button-gradient">
           WhatsApp
         </a>
-        <a href="#" className="button-gradient">
-          demo@tolqai.com
+        <a href="mailto:hello@tolqai.com" className="button-gradient">
+          hello@tolqai.com
         </a>
       </div>
     </nav>

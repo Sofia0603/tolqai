@@ -9,19 +9,19 @@ const Menu = [
             { name: "Features", href: "#features" },
         ],
     },
-    {
-        title: "Solutions",
-        menu: [
-            { name: "Retail & Automotive", href: "#" },
-            { name: "Customer Support", href: "#" },
-            { name: "HR & Recruitment", href: "#" },
-            { name: "Training & QA", href: "#" },
-        ],
-    },
+    // {
+    //     title: "Solutions",
+    //     menu: [
+    //         { name: "Retail & Automotive", href: "#" },
+    //         { name: "Customer Support", href: "#" },
+    //         { name: "HR & Recruitment", href: "#" },
+    //         { name: "Training & QA", href: "#" },
+    //     ],
+    // },
     {
         title: "Contact",
         menu: [
-            { name: "demo@tolqai.com", href: "mailto:demo@tolqai.com" },
+            { name: "hello@tolqai.com", href: "mailto:hello@tolqai.com" },
             { name: "WhatsApp Support", href: "#" },
         ],
     },

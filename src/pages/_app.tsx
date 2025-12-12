@@ -15,7 +15,7 @@ const onest = Onest({
 
 export default function MyApp({ Component, pageProps }: AppProps) {
     return (
-        <div className={`${onest.variable} font-onest flex flex-col min-h-screen`}>
+        <div className={`${onest.variable} font-onest flex flex-col justify-between min-h-screen`}>
             <Head>
                 <title>TolqAi</title>
                 <meta name="description" content="TolqAi: description" />

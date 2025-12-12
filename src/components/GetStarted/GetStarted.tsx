@@ -16,8 +16,8 @@ export default function GetStarted(){
                     <LinkBottom
                         title="Email Us"
                         subtitle="Prefer email? Send us a message"
-                        linkName="demo@tolqai.com"
-                        href="mailto:demo@tolqai.com"
+                        linkName="hello@tolqai.com"
+                        href="mailto:hello@tolqai.com"
                     />
                     <div className="h-[1px] w-full bg-[#d9d9d9] md:h-[106px] md:w-[1px] md:mx-auto"></div>
                     <LinkBottom
