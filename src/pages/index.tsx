@@ -1,3 +1,5 @@
+
+import React, { useEffect } from "react";
 import Hero from "@/components/Hero/Hero";
 import How from "@/components/How/How";
 import Use from "@/components/Use/Use";
@@ -9,6 +11,8 @@ import GetStarted from "@/components/GetStarted/GetStarted";
 import useCasesData from "@/data/useCasesData";
 import nowData from "@/data/nowData";
 import type { GetStaticProps } from "next";
+
+
 
 import ErrorBoundary from "@/components/Utils/ErrorBoundary";
 
@@ -31,6 +35,17 @@ type TPageProps = {
 };
 
 export default function Page({ useCasesData, nowData }: TPageProps) {
+
+    useEffect(() => {
+        import('aos').then((AOS) => {
+            AOS.init({
+                duration: 800,
+                once: true,
+            });
+        });
+    }, []);
+
+
     return (
         <>
             <ErrorBoundary fallback={<div>Hero failed to load.</div>}>

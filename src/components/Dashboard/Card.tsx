@@ -5,15 +5,16 @@ interface ICardProps {
     title: string;
     text: string;
     img: string;
+    dataAos:string;
 }
 
-export default function Card({ title, text, img }:ICardProps) {
+export default function Card({ title, text, img,dataAos }:ICardProps) {
 
     const [imgSrc, setImgSrc] = useState(img);
     const [errored, setErrored] = useState(false);
 
   return (
-    <div className="flex flex-col bg-white rounded-2xl p-3 h-full max-w-[336px] md:p-5 md:max-w-[666px]  xl:max-w-[1224px] ">
+    <div className="flex flex-col bg-white rounded-2xl p-3 h-full max-w-[336px] md:p-5 md:max-w-[666px]  xl:max-w-[1224px] " data-aos={dataAos} >
       <h4 className="flex items-center text-[15px] md:text-xl xl:text-2xl xl:mb-3">
         <span
           className="w-[10px] h-[10px] bg-[#8c3cdd] rounded-full mr-4"

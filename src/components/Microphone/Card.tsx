@@ -7,9 +7,10 @@ interface ICardProps{
     description: string;
     img: string;
     classNameImg: string;
+    dataAos: string;
 }
 
-export default function Card({icon, title, description, img, classNameImg} : ICardProps) {
+export default function Card({icon, title, description, img, classNameImg,dataAos} : ICardProps) {
     const [imgSrc, setImgSrc] = useState(img);
     const [iconSrc, setIconSrc] = useState(icon);
     const [errored, setErrored] = useState(false);
@@ -18,7 +19,7 @@ export default function Card({icon, title, description, img, classNameImg} : ICa
 
 
     return (
-    <div className="flex flex-col relative rounded-2xl bg-color-gray pt-6 pl-6 pr-6 overflow-hidden h-[368px] md:h-[632px] md:p-10 xl:h-[786px] ">
+    <div className="flex flex-col relative rounded-2xl bg-color-gray pt-6 pl-6 pr-6 overflow-hidden h-[368px] md:h-[632px] md:p-10 xl:h-[786px] " data-aos={dataAos}>
       <div className=" relative flex flex-row items-center gap-2 mb-2 xl:gap-4">
             <Image
               src={iconSrc}

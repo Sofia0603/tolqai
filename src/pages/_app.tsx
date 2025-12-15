@@ -1,9 +1,11 @@
+
 import type { AppProps } from "next/app";
 import "@/globals.css";
 import { Onest } from "next/font/google";
 import HeaderWrapper from "@/components/Layout/Header/HeaderWrapper";
 import Footer from "@/components/Layout/Footer/Footer";
 import Head from "next/head";
+import 'aos/dist/aos.css';
 import Cookie from "@/components/Cookie/Cookie";
 
 const onest = Onest({
@@ -14,6 +16,7 @@ const onest = Onest({
 });
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+
     return (
         <div className={`${onest.variable} font-onest flex flex-col justify-between min-h-screen`}>
             <Head>

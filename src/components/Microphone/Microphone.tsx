@@ -44,9 +44,9 @@ export default function Microphone(){
   return (
     <section id="microphone" className="py-12">
       <div className="container mx-auto px-3 flex flex-col justify-center xl:px-0">
-        <h2 className="font-onest text-xl text-color-dop mb-2 md:text-2xl xl:text-[32px] xl:text-center">TolqAI Microphone</h2>
-        <h3 className="font-onest text-[32px] leading-[1.2] tracking-wider text-color-primary font-base mb-4 md:text-[40px] xl:text-[70px] xl:text-center">Capture Offline Conversations Seamlessly</h3>
-        <p className="font-onest text-[15px] text-color-primary md:max-w-150 md:text-xl xl:max-w-[900px] xl:text-center xl:self-center">
+        <h2 className="font-onest text-xl text-color-dop mb-2 md:text-2xl xl:text-[32px] xl:text-center" data-aos="fade-up">TolqAI Microphone</h2>
+        <h3 className="font-onest text-[32px] leading-[1.2] tracking-wider text-color-primary font-base mb-4 md:text-[40px] xl:text-[70px] xl:text-center" data-aos="fade-up">Capture Offline Conversations Seamlessly</h3>
+        <p className="font-onest text-[15px] text-color-primary md:max-w-150 md:text-xl xl:max-w-[900px] xl:text-center xl:self-center" data-aos="fade-up">
           Your gateway to offline intelligence — a lightweight wearable that captures
           high-quality audio and automatically uploads encrypted data to your dashboard
         </p>
@@ -61,6 +61,7 @@ export default function Microphone(){
                   img={item.img}
                   classNameImg={item.classNameImg}
                   key={index}
+                  dataAos="fade-up"
               />
           ))}
 

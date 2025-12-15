@@ -2,12 +2,14 @@ import Image from "next/image";
 import Card from "@/components/How/Card";
 
 interface IHow {
-  title: string;
-  description: string;
+  title: string
+  description: string
   className:string
-  img:string;
+  img:string
   widthImg:number
   heightImg:number
+  dataAos?: string
+  dataAosDuration?: number
 }
 
 interface nowProps {
@@ -18,9 +20,9 @@ export default function How({ data }: nowProps) {
   return (
     <section id="how" className="py-12 md:py-20 xl:py-30">
       <div className="container mx-auto px-3 xl:px-0">
-        <h2 className="font-onest text-xl text-color-dop mb-2 md:text-2xl xl:text-[32px]">How it works</h2>
-        <h3 className="font-onest text-[32px] leading-[1.2] tracking-wider text-color-primary font-base mb-4 md:text-[40px] md:max-w-110 xl:text-[70px] xl:max-w-200">From Conversations  to Insights</h3>
-        <p className="font-onest text-[15px] text-color-primary md:max-w-150 md:text-xl xl:max-w-200">
+        <h2 className="font-onest text-xl text-color-dop mb-2 md:text-2xl xl:text-[32px]" data-aos="fade-up">How it works</h2>
+        <h3 className="font-onest text-[32px] leading-[1.2] tracking-wider text-color-primary font-base mb-4 md:text-[40px] md:max-w-110 xl:text-[70px] xl:max-w-200" data-aos="fade-up">From Conversations  to Insights</h3>
+        <p className="font-onest text-[15px] text-color-primary md:max-w-150 md:text-xl xl:max-w-200" data-aos="fade-up">
           Dynamic flow from sound capture to text analysis to dashboard visualization — complete intelligence in three steps
         </p>
 
@@ -35,6 +37,8 @@ export default function How({ data }: nowProps) {
                   widthImg={item.widthImg}
                   heightImg={item.heightImg}
                   key={index}
+                  dataAos="fade-up"
+                  dataAosDuration={300 + index * 700}
               />
           ))}
 
