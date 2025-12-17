@@ -10,6 +10,7 @@ interface IHow {
   heightImg:number
   dataAos?: string
   dataAosDuration?: number
+  dataAosDelay?: number
 }
 
 interface nowProps {
@@ -38,7 +39,8 @@ export default function How({ data }: nowProps) {
                   heightImg={item.heightImg}
                   key={index}
                   dataAos="fade-up"
-                  dataAosDuration={300 + index * 700}
+                  dataAosDuration={1000}
+                  dataAosDelay={index * 500}
               />
           ))}
 

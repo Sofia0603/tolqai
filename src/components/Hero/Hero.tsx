@@ -10,10 +10,10 @@ export default function Hero() {
   const [errored, setErrored] = useState(false);
 
   return (
-    <section id="hero" className="px-5 flex mb-3 text-center z-10">
+    <section id="hero" className="px-5 flex mb-5 text-center z-10">
       <div className="w-full bg-gray-100 rounded-3xl p-4 md:p-0">
         <div
-          className="relative rounded-xl h-[40vh] flex justify-end mb-6 overflow-hidden md:mb-0 md:rounded-4xl md:h-[90vh]"
+          className="relative rounded-xl h-[40vh] flex justify-end mb-6 overflow-hidden md:mb-0 md:rounded-4xl md:h-[89vh]"
         >
           <Image
             src={imgSrc}

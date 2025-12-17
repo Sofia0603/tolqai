@@ -35,7 +35,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
             <HeaderWrapper />
 
-            <main className="relative z-0 overflow-x-hidden">
+            <main className="relative z-0">
                 <Component {...pageProps} />
             </main>
 

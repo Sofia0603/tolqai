@@ -7,6 +7,7 @@ interface IUseCase {
   description: string;
   dataAos?: string
   dataAosDuration?: number
+  dataAosDelay?: number
 }
 
 
@@ -31,8 +32,9 @@ export default function Use({ data }: UseProps) {
                 icon={item.icon}
                 title={item.title}
                 description={item.description}
-                dataAos="fade-right"
-                dataAosDuration={300 + index * 100}
+                dataAos="fade-up"
+                dataAosDuration={600}
+                dataAosDelay={index * 200}
 
               />
           ))}
@@ -40,7 +42,7 @@ export default function Use({ data }: UseProps) {
         </div>
 
         <div className="flex flex-col gap-10 mx-[18px] md:flex-row md:gap-5 md:max-w-[1154px] xl:gap-20">
-          <div className="flex flex-col items-center text-center " data-aos="fade-right">
+          <div className="flex flex-col items-center text-center " data-aos="fade-up">
             <div className="font-onest text-xl mb-3 text-white xl:text-2xl">Offline Retail Solution</div>
             <div className="font-onest font-normal text-sm opacity-50 text-white mb-[10px] xl:text-lg xl:max-w-100">Capture in-store conversations with wearable microphones and get real-time analytics</div>
             <a href="#" className="flex flex-row gap-3 justify-center items-center button-gradient font-onest text-sm xl:text-lg">
@@ -55,7 +57,7 @@ export default function Use({ data }: UseProps) {
             </a>
           </div>
           <div className="h-[1px] w-full bg-[#d9d9d9] md:h-[106px] md:w-[1px] md:mx-auto" ></div>
-          <div className="flex flex-col items-center text-center" data-aos="fade-right">
+          <div className="flex flex-col items-center text-center" data-aos="fade-up">
             <div className="font-onest text-xl mb-3 text-white xl:text-2xl">Omni-Retail Solution</div>
             <div className="font-onest font-normal text-sm opacity-50 text-white mb-[10px] xl:text-lg xl:max-w-100">Unified analytics for online and offline conversations across all channels</div>
             <a href="#" className="flex flex-row gap-3 justify-center items-center button-gradient font-onest text-sm xl:text-lg">

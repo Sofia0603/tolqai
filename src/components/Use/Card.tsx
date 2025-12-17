@@ -7,9 +7,10 @@ interface ICardProps{
     description: string;
     dataAos?: string
     dataAosDuration?: number
+    dataAosDelay?: number
 }
 
-export default function Card({ icon, title, description,dataAos,dataAosDuration}: ICardProps){
+export default function Card({ icon, title, description,dataAos,dataAosDuration,dataAosDelay}: ICardProps){
 
     const [imgSrc, setImgSrc] = useState(icon);
     const [errored, setErrored] = useState(false);
@@ -20,6 +21,7 @@ export default function Card({ icon, title, description,dataAos,dataAosDuration}
         <div className="py-5 pl-5 pr-12 bg-color-gray-dop rounded-4xl md:py-7 md:pl-7 xl:p-9"
              data-aos={dataAos}
              data-aos-duration={dataAosDuration}
+             data-aos-delay={dataAosDelay}
         >
             <Image
                 src={imgSrc}
