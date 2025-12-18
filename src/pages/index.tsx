@@ -36,15 +36,6 @@ type TPageProps = {
 
 export default function Page({ useCasesData, nowData }: TPageProps) {
 
-    useEffect(() => {
-        import('aos').then((AOS) => {
-            AOS.init({
-                duration: 800,
-                once: true,
-            });
-        });
-    }, []);
-
 
     return (
         <>

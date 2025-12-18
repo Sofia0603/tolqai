@@ -7,6 +7,7 @@ import Footer from "@/components/Layout/Footer/Footer";
 import Head from "next/head";
 import 'aos/dist/aos.css';
 import Cookie from "@/components/Cookie/Cookie";
+import {useEffect} from "react";
 
 const onest = Onest({
     variable: "--font-onest",
@@ -16,6 +17,15 @@ const onest = Onest({
 });
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+
+    useEffect(() => {
+        import('aos').then((AOS) => {
+            AOS.init({
+                duration: 800,
+                once: true,
+            });
+        });
+    }, []);
 
     return (
         <div className={`${onest.variable} font-onest flex flex-col justify-between min-h-screen`}>
