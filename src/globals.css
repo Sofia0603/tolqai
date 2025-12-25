@@ -1,0 +1,266 @@
+@import "tailwindcss";
+
+
+
+@theme {
+    /*--font-sf: "SF Pro", sans-serif;*/
+    /*--font-onest: "Onest", sans-serif;*/
+    /*--font-gotham: "Gotham Pro", sans-serif;*/
+
+    --color-primary: #0f0f0f;
+
+    --text-gray-500: #1f1f1f;
+    --text-gray-300: #a5a5a5;
+    --text-gray-400: #575757;
+    --bg-black: #0f0f0f;
+    --text-color-black: #0f0f0f;
+    --bg-gray: #f8f8f8;
+    --bg-gray-dop: #1f1f1f;
+    --red-color:#FF6B6B;
+
+}
+:root {
+    --font-onest: 'Onest', sans-serif;
+}
+
+.font-onest {
+    font-family: var(--font-onest);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@utility text-primary {
+    color: var(--color-primary);
+}
+
+@utility text-color-primary {
+    color: var(--text-gray-500);
+}
+
+@utility text-color-dop {
+    color: var(--text-gray-300);
+}
+
+@utility text-color-second {
+    color: var(--text-gray-400);
+}
+@utility text-color-black {
+    color: var(--text-color-black);
+}
+
+@utility bg-color-black {
+    background-color: var(--bg-black);
+}
+
+@utility bg-color-gray {
+    background-color: var(--bg-gray);
+}
+@utility bg-color-gray-dop {
+    background-color: var(--bg-gray-dop);
+}
+@utility bg-color-red{
+    background-color: var(--red-color);
+}
+
+@utility text-color-red{
+    color: var(--red-color);
+}
+
+
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+
+
+@keyframes gradient-x {
+    0% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 20% 100%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+@utility animate-gradient-x {
+    animation: gradient-x 6s linear infinite;
+}
+
+input,
+textarea {
+    outline: none !important;
+}
+
+
+input:-internal-autofill-selected,
+input:autofill {
+    background-color: inherit !important;
+    color: inherit !important;
+}
+
+
+button:hover {
+    @apply cursor-pointer;
+}
+
+
+.button-gradient {
+    background: linear-gradient(90deg, #cbc3fc, #8c3cdd);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    animation: gradient-x 3s ease infinite;
+    transition: background 0.6s ease-in-out,
+    background-position 0.6s ease-in-out,
+    color 0.6s ease-in-out;
+}
+
+
+.button-gradient-hover {
+    color: black;
+    transition: background-color 3s ease;
+}
+.button-gradient-hover:hover {
+    background:
+            linear-gradient(90deg, #8c3cdd, #cbc3fc, #8c3cdd)
+            100% 50% / 200% 200% no-repeat;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-x 3s ease infinite;
+}
+
+
+.button-background-gradient {
+    background:
+            linear-gradient(75deg, #8c3cdd, #cbc3fc, #8c3cdd)
+            100% 100% / 200% 200% no-repeat;
+    animation: gradient-x 6s ease infinite;
+}
+
+
+
+.button-border-gradient {
+    position: relative;
+    border-radius: 100px;
+    border: 1px solid white;
+    background: transparent;
+    cursor: pointer;
+    /*overflow: hidden;*/
+    transition: border-color 0.3s ease;
+
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+@media screen and (max-width: 768px){
+    .button-border-gradient{
+        border: 1px solid black;
+    }
+}
+
+
+
+.button-border-gradient::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(45deg, #8c3cdd, #cbc3fc, #8c3cdd);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.button-border-gradient:hover {
+    border-color: transparent;
+}
+
+
+.button-border-gradient:hover::after {
+    opacity: 1;
+}
+.button-border-gradient:hover svg circle {
+    fill: url(#gradient-hover);
+}
+.button-border-gradient svg path{
+    stroke: black ;
+}
+
+
+
+#dashboard .swiper-slide{
+    transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width: 768px) {
+    .button-border-gradient svg path{
+        stroke: black !important ;
+    }
+    .button-border-gradient:hover svg path {
+        stroke: black !important;
+    }
+
+
+    .button-border-gradient:hover::after {
+        opacity: 0 !important;
+    }
+
+    .button-border-gradient:hover {
+        border-color: black !important;
+    }
+    .button-gradient-hover:hover{
+        background: black;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        animation: 3s infinite gradient-x;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    #dashboard .swiper-slide{
+        transform: scaleY(0.9);
+    }
+    #dashboard .swiper-slide.swiper-slide-active{
+        transform: scaleY(1);
+    }
+    .button-border-gradient svg path{
+        stroke: white ;
+    }
+    .button-border-gradient:hover svg path {
+        stroke: url(#gradient);
+    }
+}
+@media screen and (min-width: 1280px) {
+    .button-border-gradient{
+        padding-top: 21px;
+        padding-bottom: 21px;
+    }
+}
+
+/*@media screen and (min-width: 1280px) {*/
+/*    #dashboard .swiper-slide div{*/
+/*       max-height: 870px;*/
+/*    }*/
+/*    #dashboard .swiper-slide.swiper-slide-active div{*/
+/*       max-height: 977px;*/
+/*    }*/
+/*}*/
