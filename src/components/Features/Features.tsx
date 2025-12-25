@@ -20,28 +20,28 @@ export default function Features(){
                     <Card
                         title="Real-Time Benchmarking"
                         text="Live benchmarks across teams with performance metrics that update as conversations happen — compare  and improve continuously"
-                        img = "/images/features/card-1.svg"
+                        video = "/images/features/real1.mp4"
                         reverse={false}
                         dataAos="fade-up"
                     />
                     <Card
                         title="Role-Based Access Control"
                         text="Connect with existing CRM, telephony, and business tools — custom analytics widgets for your specific needs"
-                        img = "/images/features/card-2.svg"
+                        video = "/images/features/role2.mp4"
                         reverse={true}
                         dataAos="fade-up"
                     />
                     <Card
                         title="API Integrations & Widgets"
                         text="Connect with existing CRM, telephony, and business tools — custom analytics widgets for your specific needs"
-                        img = "/images/features/card-3.svg"
+                        video = "/images/features/integrations3.mp4"
                         reverse={false}
                         dataAos="fade-up"
                     />
                     <Card
                         title="Offline-First & Secure"
                         text="Field teams work without connectivity — data syncs automatically with enterprise-grade encryption and GDPR compliance"
-                        img = "/images/features/card-4.svg"
+                        video = "/images/features/offline4.mp4"
                         reverse={true}
                         dataAos="fade-up"
                     />

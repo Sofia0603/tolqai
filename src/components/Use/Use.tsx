@@ -46,28 +46,13 @@ export default function Use({ data }: UseProps) {
             <div className="font-onest text-xl mb-3 text-white xl:text-2xl">Offline Retail Solution</div>
             <div className="font-onest font-normal text-sm opacity-50 text-white mb-[10px] xl:text-lg xl:max-w-100">Capture in-store conversations with wearable microphones and get real-time analytics</div>
             <a href="#" className="flex flex-row gap-3 justify-center items-center button-gradient font-onest text-sm xl:text-lg">
-              <span>Learn more</span>
+              <span>Request a Demo</span>
               <Image
                 src="/images/icons/icon-arrow-right.svg"
                 alt="Offline Retail Solution"
                 width={13}
                 height={8}
-                className="w-[13px] h-[8px]"
-              />
-            </a>
-          </div>
-          <div className="h-[1px] w-full bg-[#d9d9d9] md:h-[106px] md:w-[1px] md:mx-auto" ></div>
-          <div className="flex flex-col items-center text-center" data-aos="fade-up">
-            <div className="font-onest text-xl mb-3 text-white xl:text-2xl">Omni-Retail Solution</div>
-            <div className="font-onest font-normal text-sm opacity-50 text-white mb-[10px] xl:text-lg xl:max-w-100">Unified analytics for online and offline conversations across all channels</div>
-            <a href="#" className="flex flex-row gap-3 justify-center items-center button-gradient font-onest text-sm xl:text-lg">
-              <span>Learn more</span>
-              <Image
-                src="/images/icons/icon-arrow-right.svg"
-                alt="Omni-Retail Solution"
-                width={13}
-                height={8}
-                className="w-[13px] h-[8px]"
+                className="w-[13px] h-[8px] mt-0.5"
               />
             </a>
           </div>

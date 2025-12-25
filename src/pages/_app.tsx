@@ -1,13 +1,13 @@
-
 import type { AppProps } from "next/app";
 import "@/globals.css";
 import { Onest } from "next/font/google";
 import HeaderWrapper from "@/components/Layout/Header/HeaderWrapper";
 import Footer from "@/components/Layout/Footer/Footer";
 import Head from "next/head";
-import 'aos/dist/aos.css';
 import Cookie from "@/components/Cookie/Cookie";
 import {useEffect} from "react";
+import "aos/dist/aos.css";
+
 
 const onest = Onest({
     variable: "--font-onest",

@@ -73,8 +73,10 @@ export default function Header({ isOpen, setIsOpen }: HeaderProps) {
         </div>
 
         {/* Mobile menu */}
-        <MobileMenu isOpen={isOpen} />
-      </div>
+        <MobileMenu
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)} // ОБЯЗАТЕЛЬНО передаем функцию закрытия
+        />      </div>
     </header>
   );
 }
