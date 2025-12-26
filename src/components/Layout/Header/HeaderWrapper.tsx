@@ -3,7 +3,11 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Layout/Header/Header";
 
-export default function HeaderWrapper() {
+interface HeaderWrapperProps {
+    isSimple?: boolean;
+}
+
+export default function HeaderWrapper({isSimple}:HeaderWrapperProps) {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -21,7 +25,7 @@ export default function HeaderWrapper() {
 
     return (
         <div className="relative">
-            <Header isOpen={isOpen} setIsOpen={setIsOpen} />
+            <Header isOpen={isOpen} setIsOpen={setIsOpen} isSimple={isSimple}/>
 
             {isOpen && (
                 <div className="fixed inset-0 bg-black/50 z-30"></div>

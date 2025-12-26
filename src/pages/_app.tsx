@@ -1,5 +1,5 @@
-
 import type { AppProps } from "next/app";
+import { useRouter } from "next/router";
 import "@/globals.css";
 import { Onest } from "next/font/google";
 import HeaderWrapper from "@/components/Layout/Header/HeaderWrapper";
@@ -16,6 +16,10 @@ const onest = Onest({
 });
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+    const router = useRouter();
+
+    const hideFooterRoutes = ["/privacy-policy", "/terms-of-service"];
+    const shouldHideFooter = hideFooterRoutes.includes(router.pathname);
 
     return (
         <div className={`${onest.variable} font-onest flex flex-col justify-between min-h-screen`}>
@@ -23,9 +27,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                 <title>TolqAi</title>
                 <meta name="description" content="TolqAi: description" />
 
-
                 <link rel="icon" href="" />
-
 
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="TolqAi" />
@@ -33,13 +35,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                 <meta property="og:image" content="/og-image.png" />
             </Head>
 
-            <HeaderWrapper />
+            <HeaderWrapper isSimple={shouldHideFooter} />
 
             <main className="relative z-0">
                 <Component {...pageProps} />
             </main>
 
-            <Footer />
+            {!shouldHideFooter && <Footer />}
 
             {/*<Cookie/>*/}
         </div>
