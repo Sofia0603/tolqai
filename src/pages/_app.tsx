@@ -5,8 +5,10 @@ import { Onest } from "next/font/google";
 import HeaderWrapper from "@/components/Layout/Header/HeaderWrapper";
 import Footer from "@/components/Layout/Footer/Footer";
 import Head from "next/head";
-import 'aos/dist/aos.css';
 import Cookie from "@/components/Cookie/Cookie";
+import {useEffect} from "react";
+import "aos/dist/aos.css";
+
 
 const onest = Onest({
     variable: "--font-onest",
@@ -20,6 +22,15 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
     const hideFooterRoutes = ["/privacy-policy", "/terms-of-service"];
     const shouldHideFooter = hideFooterRoutes.includes(router.pathname);
+
+    useEffect(() => {
+        import('aos').then((AOS) => {
+            AOS.init({
+                duration: 800,
+                once: true,
+            });
+        });
+    }, []);
 
     return (
         <div className={`${onest.variable} font-onest flex flex-col justify-between min-h-screen`}>

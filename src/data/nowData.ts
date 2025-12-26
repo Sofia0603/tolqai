@@ -3,7 +3,7 @@ const nowData = [
         title: "Capture Everywhere",
         description: "Via TolqAI Microphone or uploaded audio (MP3, CRM recordings, call center logs). Works offline and online with automatic sync.",
         className: "w-full h-auto max-w-[456px] self-center xl:mt-auto",
-        img: "/images/how/card-1.svg",
+        img: "/images/how/card-1.1.svg",
         widthImg: 400,
         heightImg: 381
     },

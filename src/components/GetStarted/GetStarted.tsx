@@ -24,7 +24,8 @@ export default function GetStarted(){
                         title="WhatsApp"
                         subtitle="Quick questions? Chat with us"
                         linkName="Start a conversation"
-                        href="#"
+                        href="https://wa.me/966534751480"
+                        target="_blank"
                     />
                 </div>
 

@@ -6,11 +6,11 @@ import BannerContent from "@/components/Hero/HeroContent";
 
 export default function Hero() {
 
-  const [imgSrc, setImgSrc] = useState('/images/hero/main-banner.png');
+  const [imgSrc, setImgSrc] = useState('/images/hero/banner.png');
   const [errored, setErrored] = useState(false);
 
   return (
-    <section id="hero" className="px-5 flex mb-5 text-center z-10">
+    <section id="hero" className="px-3 flex mb-5 text-center z-10">
       <div className="w-full bg-gray-100 rounded-3xl p-4 md:p-0">
         <div
           className="relative rounded-xl h-[40vh] flex justify-end mb-6 overflow-hidden md:mb-0 md:rounded-4xl md:h-[89vh]"
@@ -22,7 +22,7 @@ export default function Hero() {
             sizes="100vh"
             loading="eager"
             priority
-            className="rounded-2xl object-cover object-[40%_75%] md:object-center"
+            className="rounded-2xl object-cover object-[90%_75%] md:object-center"
             onError={() => {
               if (!errored) {
                 setImgSrc('/images/no-image.png');
