@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 interface ICardProps {
   title: string;
   text: string;
-  video: string; // Оставляем название пропса img, как ты просил
+  video: string;
   dataAos: string;
   isActive: boolean;
 }
@@ -16,12 +16,10 @@ export default function Card({ title, text, video, dataAos, isActive }: ICardPro
   useEffect(() => {
     if (videoRef.current) {
       if (isActive) {
-        // Запуск видео, когда слайд активен
         videoRef.current.play().catch((err) => {
           console.log("Автоплей заблокирован:", err);
         });
       } else {
-        // Пауза и сброс, когда слайд неактивен
         videoRef.current.pause();
         videoRef.current.currentTime = 0;
       }
@@ -29,7 +27,7 @@ export default function Card({ title, text, video, dataAos, isActive }: ICardPro
   }, [isActive]);
 
   return (
-    <div className="flex flex-col bg-white rounded-2xl p-3 h-full max-w-[336px] md:p-5 md:max-w-[666px] xl:max-w-[1224px]" data-aos={dataAos}>
+    <div className="flex flex-col bg-white rounded-2xl p-3 h-full max-w-full md:p-5 md:max-w-[666px] xl:max-w-[1224px]" data-aos={dataAos}>
       <h4 className="flex items-center text-[15px] md:text-xl xl:text-2xl xl:mb-3">
         <span
           className="w-[10px] h-[10px] bg-[#8c3cdd] rounded-full mr-4"

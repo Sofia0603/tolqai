@@ -16,20 +16,21 @@ export default function Hero() {
           className="relative rounded-xl h-[40vh] flex justify-end mb-6 overflow-hidden md:mb-0 md:rounded-4xl md:h-[89vh]"
         >
           <Image
-            src={imgSrc}
-            alt="Service Quality Monitoring"
-            fill
-            sizes="100vh"
-            loading="eager"
-            priority
-            className="rounded-2xl object-cover object-[90%_75%] md:object-center"
-            onError={() => {
-              if (!errored) {
-                setImgSrc('/images/no-image.png');
-                setErrored(true);
-              }
-            }}
+              src={imgSrc}
+              alt="Service Quality Monitoring"
+              width={1920}
+              height={1080}
+              sizes="100vw"
+              priority
+              className="rounded-2xl w-full h-[40vh] md:h-[89vh] object-cover object-[90%_75%] md:object-center"
+              onError={() => {
+                if (!errored) {
+                  setImgSrc('/images/no-image.png');
+                  setErrored(true);
+                }
+              }}
           />
+
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-2xl pointer-events-none"></div>
 
           {/* На md+ поверх картинки */}
